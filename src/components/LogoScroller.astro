@@ -1,0 +1,524 @@
+---
+const brands = [
+  { src: '/assets/companieslogos/logo-99fm.jpg', name: '99 FM' },
+  { src: '/assets/companieslogos/logo-omulunga.jpg', name: 'Radio Omulunga' },
+  { src: '/assets/companieslogos/logo-one.jpg', name: 'One Africa' },
+  { src: '/assets/companieslogos/logo-nova.jpg', name: 'Nova 103.5 FM' },
+  { src: '/assets/companieslogos/logo-wave.jpg', name: 'Radio Wave 96.7' },
+  { src: '/assets/companieslogos/logo-freshfm.jpg', name: 'Fresh FM' },
+  { src: '/assets/companieslogos/logo-fmnews.jpg', name: 'Future Media News' },
+  { src: '/assets/companieslogos/logo-learnon.jpg', name: 'LearnOn One' },
+];
+
+const topics = [
+  'Advertising enquiry',
+  'Sponsorship / partnership',
+  'Media kit / brand info',
+  'Make an appointment',
+  'General question',
+];
+
+const track = [...brands, ...brands];
+---
+
+<section class="logo-scroller" aria-label="Our brands">
+  <div class="logo-scroller__inner">
+    <div class="logo-scroller__heading">
+      <p class="logo-scroller__label">Our Brands</p>
+      <button type="button" class="btn-primary" id="brand-contact-open">Contact Us</button>
+    </div>
+    <div class="logo-scroller__viewport">
+      <div class="logo-scroller__track">
+        {track.map((brand, i) => (
+          <div class="logo-scroller__item" aria-hidden={i >= brands.length ? 'true' : undefined}>
+            <img src={brand.src} alt={i >= brands.length ? '' : brand.name} width="96" height="96" loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<dialog class="brand-contact-dialog" id="brand-contact-dialog" aria-labelledby="brand-contact-title">
+  <div class="brand-contact-dialog__panel">
+    <header class="brand-contact-dialog__header">
+      <div>
+        <h2 id="brand-contact-title">Contact a brand</h2>
+        <p>Choose which brand you’d like to reach, and tell us what you need.</p>
+      </div>
+      <button type="button" class="brand-contact-dialog__close" id="brand-contact-close" aria-label="Close dialog">×</button>
+    </header>
+
+    <form class="brand-contact-form" id="brand-contact-form">
+      <fieldset class="brand-contact-form__fieldset">
+        <legend>Which brand?</legend>
+        <div class="brand-contact-form__brands" role="radiogroup" aria-label="Select a brand">
+          {brands.map((brand, i) => (
+            <label class="brand-contact-form__brand">
+              <input type="radio" name="brand" value={brand.name} required checked={i === 0} />
+              <span class="brand-contact-form__brand-tile">
+                <img src={brand.src} alt="" width="64" height="64" />
+                <span>{brand.name}</span>
+              </span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
+      <div class="form-group">
+        <label for="brand-contact-topic">What do you need?</label>
+        <select id="brand-contact-topic" name="topic" required>
+          <option value="" disabled selected>Select…</option>
+          {topics.map((topic) => (
+            <option value={topic}>{topic}</option>
+          ))}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="brand-contact-message">Tell us more</label>
+        <textarea id="brand-contact-message" name="message" rows="3" placeholder="Briefly describe your enquiry…" required></textarea>
+      </div>
+
+      <div class="brand-contact-form__row">
+        <div class="form-group">
+          <label for="brand-contact-name">Your name</label>
+          <input type="text" id="brand-contact-name" name="name" required autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="brand-contact-email">Email</label>
+          <input type="email" id="brand-contact-email" name="email" required autocomplete="email" />
+        </div>
+      </div>
+
+      <div class="brand-contact-form__actions">
+        <button type="button" class="brand-contact-form__cancel" id="brand-contact-cancel">Cancel</button>
+        <button type="submit" class="btn-primary">Send enquiry</button>
+      </div>
+    </form>
+
+    <div class="brand-contact-success" id="brand-contact-success" hidden>
+      <p class="brand-contact-success__title">Thanks — we’ve got your enquiry.</p>
+      <p>A Future Media team member will follow up about <strong id="brand-contact-success-brand"></strong>.</p>
+      <button type="button" class="btn-primary" id="brand-contact-done">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<style>
+  .logo-scroller {
+    background: linear-gradient(180deg, #ffffff 0%, #f4f5f6 100%);
+    padding: 40px 0 48px;
+    border-top: 1px solid #e8ebef;
+    border-bottom: 1px solid #e8ebef;
+    overflow: hidden;
+  }
+
+  .logo-scroller__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .logo-scroller__heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+    padding: 0 16px;
+  }
+
+  .logo-scroller__label {
+    color: #5a6570;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin: 0;
+  }
+
+  .logo-scroller__heading .btn-primary {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+
+  .logo-scroller__viewport {
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .logo-scroller__track {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    animation: logo-scroll 32s linear infinite;
+    will-change: transform;
+  }
+
+  .logo-scroller__viewport:hover .logo-scroller__track {
+    animation-play-state: paused;
+  }
+
+  .logo-scroller__item {
+    flex: 0 0 auto;
+    width: 96px;
+    height: 96px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow:
+      0 1px 2px rgba(49, 62, 74, 0.06),
+      0 8px 24px rgba(49, 62, 74, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .logo-scroller__item:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow:
+      0 4px 8px rgba(49, 62, 74, 0.08),
+      0 16px 32px rgba(49, 62, 74, 0.16);
+  }
+
+  .logo-scroller__item img {
+    display: block;
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @keyframes logo-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .brand-contact-dialog {
+    width: min(560px, calc(100vw - 32px));
+    max-height: calc(100vh - 48px);
+    margin: auto;
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    overflow: visible;
+  }
+
+  .brand-contact-dialog::backdrop {
+    background: rgba(49, 62, 74, 0.55);
+    backdrop-filter: blur(2px);
+  }
+
+  .brand-contact-dialog__panel {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 24px 64px rgba(49, 62, 74, 0.28);
+    padding: 28px 28px 24px;
+    overflow: auto;
+    max-height: calc(100vh - 48px);
+  }
+
+  .brand-contact-dialog__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+
+  .brand-contact-dialog__header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #313E4A;
+    margin: 0 0 6px;
+  }
+
+  .brand-contact-dialog__header p {
+    font-size: 14px;
+    color: #5a6570;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .brand-contact-dialog__close {
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    background: #f4f5f6;
+    color: #313E4A;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .brand-contact-dialog__close:hover {
+    background: #e8ebef;
+  }
+
+  .brand-contact-form__fieldset {
+    border: none;
+    margin: 0 0 18px;
+    padding: 0;
+  }
+
+  .brand-contact-form__fieldset legend {
+    font-size: 13px;
+    font-weight: 600;
+    color: #313E4A;
+    margin-bottom: 10px;
+  }
+
+  .brand-contact-form__brands {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .brand-contact-form__brand {
+    cursor: pointer;
+  }
+
+  .brand-contact-form__brand input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .brand-contact-form__brand-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 6px;
+    border: 2px solid #e2e5e8;
+    border-radius: 10px;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    text-align: center;
+    height: 100%;
+  }
+
+  .brand-contact-form__brand-tile img {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .brand-contact-form__brand-tile span {
+    font-size: 11px;
+    font-weight: 600;
+    color: #313E4A;
+    line-height: 1.25;
+  }
+
+  .brand-contact-form__brand input:checked + .brand-contact-form__brand-tile,
+  .brand-contact-form__brand:hover .brand-contact-form__brand-tile {
+    border-color: #E3564E;
+    box-shadow: 0 0 0 3px rgba(227, 86, 78, 0.12);
+  }
+
+  .brand-contact-form__brand input:checked + .brand-contact-form__brand-tile {
+    background: rgba(227, 86, 78, 0.04);
+  }
+
+  .brand-contact-form .form-group {
+    margin-bottom: 14px;
+  }
+
+  .brand-contact-form select,
+  .brand-contact-form textarea,
+  .brand-contact-form input[type='text'],
+  .brand-contact-form input[type='email'] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e2e5e8;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #313E4A;
+    background: #fff;
+  }
+
+  .brand-contact-form select:focus,
+  .brand-contact-form textarea:focus,
+  .brand-contact-form input:focus {
+    outline: none;
+    border-color: #E3564E;
+  }
+
+  .brand-contact-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .brand-contact-form__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .brand-contact-form__cancel {
+    border: 1px solid #e2e5e8;
+    background: #fff;
+    color: #5a6570;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .brand-contact-form__cancel:hover {
+    border-color: #c5cad0;
+    color: #313E4A;
+  }
+
+  .brand-contact-success {
+    text-align: center;
+    padding: 24px 8px 8px;
+  }
+
+  .brand-contact-success__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #313E4A;
+    margin-bottom: 8px;
+  }
+
+  .brand-contact-success p {
+    font-size: 14px;
+    color: #5a6570;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-scroller__track {
+      animation: none;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .logo-scroller__item[aria-hidden='true'] {
+      display: none;
+    }
+
+    .logo-scroller__viewport {
+      mask-image: none;
+      -webkit-mask-image: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .logo-scroller {
+      padding: 32px 0 40px;
+    }
+
+    .logo-scroller__heading {
+      margin-bottom: 22px;
+      gap: 12px;
+    }
+
+    .logo-scroller__track {
+      gap: 14px;
+      animation-duration: 26s;
+    }
+
+    .logo-scroller__item,
+    .logo-scroller__item img {
+      width: 76px;
+      height: 76px;
+    }
+
+    .logo-scroller__item {
+      border-radius: 14px;
+    }
+
+    .brand-contact-dialog__panel {
+      padding: 22px 18px 18px;
+    }
+
+    .brand-contact-form__brands {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brand-contact-form__row {
+      grid-template-columns: 1fr;
+    }
+
+    .brand-contact-form__actions {
+      flex-direction: column-reverse;
+    }
+
+    .brand-contact-form__actions .btn-primary,
+    .brand-contact-form__cancel {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  function initBrandContactDialog() {
+    const dialog = document.getElementById('brand-contact-dialog') as HTMLDialogElement | null;
+    const openBtn = document.getElementById('brand-contact-open');
+    const closeBtn = document.getElementById('brand-contact-close');
+    const cancelBtn = document.getElementById('brand-contact-cancel');
+    const doneBtn = document.getElementById('brand-contact-done');
+    const form = document.getElementById('brand-contact-form') as HTMLFormElement | null;
+    const success = document.getElementById('brand-contact-success');
+    const successBrand = document.getElementById('brand-contact-success-brand');
+
+    if (!dialog || !openBtn || !form || dialog.getAttribute('data-ready')) return;
+    dialog.setAttribute('data-ready', '1');
+
+    function openDialog() {
+      if (!dialog || !form || !success) return;
+      form.hidden = false;
+      success.hidden = true;
+      form.reset();
+      const firstBrand = form.querySelector('input[name="brand"]') as HTMLInputElement | null;
+      if (firstBrand) firstBrand.checked = true;
+      dialog.showModal();
+    }
+
+    function closeDialog() {
+      dialog?.close();
+    }
+
+    openBtn.addEventListener('click', openDialog);
+    closeBtn?.addEventListener('click', closeDialog);
+    cancelBtn?.addEventListener('click', closeDialog);
+    doneBtn?.addEventListener('click', closeDialog);
+
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) closeDialog();
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const brand = String(data.get('brand') || '');
+      if (successBrand) successBrand.textContent = brand;
+      form.hidden = true;
+      if (success) success.hidden = false;
+    });
+  }
+
+  initBrandContactDialog();
+  document.addEventListener('astro:page-load', initBrandContactDialog);
+</script>
