@@ -1,0 +1,162 @@
+---
+const advertiseLinks = [
+  { label: 'Solutions', href: '/advertise/solutions' },
+  { label: 'Latest Offers', href: '/advertise/latest-offers' },
+  { label: 'Advertising Packages', href: '/advertise/advertising-packages' },
+  { label: 'Audiences & Insights', href: '/advertise/audiences-insights' },
+  { label: 'Advertising T&Cs', href: '/advertise/terms' },
+];
+
+const newsLinks = [
+  { label: 'Events', href: '/news/events' },
+  { label: 'Newsletter', href: '/news/newsletter' },
+  { label: 'Gallery', href: '/news/gallery' },
+];
+
+const aboutLinks = [
+  { label: 'Company Profile', href: '/about/company-profile' },
+  { label: 'Team', href: '/about/team' },
+  { label: 'Vision & Mission', href: '/about/vision-mission' },
+];
+---
+
+<header class="site-header">
+  <div class="top-bar">
+    <div class="top-bar__inner">
+      <div class="top-bar__item top-bar__item--address">
+        <img src="/assets/icons/address.png" alt="" width="16" height="16" />
+        <span>42 &amp; 44 Hyper Motor City Path, Windhoek</span>
+      </div>
+      <div class="top-bar__item top-bar__tel">
+        <span>Tel: <a href="tel:+27830001000">083 000 1000</a></span>
+      </div>
+    </div>
+  </div>
+
+  <nav class="main-nav" id="main-nav">
+    <div class="main-nav__inner">
+      <a href="/" class="main-nav__logo">
+        <img src="/assets/logo.png" alt="Future Media" width="225" height="94" />
+      </a>
+
+      <button
+        type="button"
+        class="main-nav__toggle"
+        id="nav-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nav-panel"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="main-nav__panel" id="nav-panel">
+        <ul class="main-nav__links">
+          <li class="main-nav__item">
+            <a href="/" class="main-nav__link">Home</a>
+          </li>
+          <li class="main-nav__item main-nav__item--dropdown">
+            <div class="main-nav__row">
+              <a href="/about/company-profile" class="main-nav__link">About Us</a>
+              <button type="button" class="main-nav__subtoggle" data-submenu-toggle aria-label="About Us submenu">▾</button>
+            </div>
+            <div class="main-nav__dropdown">
+              {aboutLinks.map((link) => (
+                <a href={link.href}>{link.label}</a>
+              ))}
+            </div>
+          </li>
+          <li class="main-nav__item main-nav__item--dropdown">
+            <div class="main-nav__row">
+              <a href="/advertise/solutions" class="main-nav__link">Advertise</a>
+              <button type="button" class="main-nav__subtoggle" data-submenu-toggle aria-label="Advertise submenu">▾</button>
+            </div>
+            <div class="main-nav__dropdown">
+              {advertiseLinks.map((link) => (
+                <a href={link.href}>{link.label}</a>
+              ))}
+            </div>
+          </li>
+          <li class="main-nav__item main-nav__item--dropdown">
+            <div class="main-nav__row">
+              <a href="/news/events" class="main-nav__link">Latest News</a>
+              <button type="button" class="main-nav__subtoggle" data-submenu-toggle aria-label="Latest News submenu">▾</button>
+            </div>
+            <div class="main-nav__dropdown">
+              {newsLinks.map((link) => (
+                <a href={link.href}>{link.label}</a>
+              ))}
+            </div>
+          </li>
+          <li class="main-nav__item">
+            <a href="/vacancies" class="main-nav__link">Vacancies</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="/contact" class="main-nav__link">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  function initMobileNav() {
+    const nav = document.getElementById('main-nav');
+    const toggle = document.getElementById('nav-toggle');
+    const panel = document.getElementById('nav-panel');
+    if (!nav || !toggle || !panel || nav.dataset.ready === '1') return;
+    nav.dataset.ready = '1';
+
+    function closeMenu() {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+      document.body.classList.remove('nav-open');
+      nav.querySelectorAll('.main-nav__item--dropdown.is-open').forEach((el) => {
+        el.classList.remove('is-open');
+      });
+    }
+
+    function openMenu() {
+      nav.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close menu');
+      document.body.classList.add('nav-open');
+    }
+
+    toggle.addEventListener('click', () => {
+      if (nav.classList.contains('is-open')) closeMenu();
+      else openMenu();
+    });
+
+    nav.querySelectorAll('[data-submenu-toggle]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const item = btn.closest('.main-nav__item--dropdown');
+        if (!item) return;
+        const wasOpen = item.classList.contains('is-open');
+        nav.querySelectorAll('.main-nav__item--dropdown.is-open').forEach((el) => {
+          el.classList.remove('is-open');
+        });
+        if (!wasOpen) item.classList.add('is-open');
+      });
+    });
+
+    panel.querySelectorAll('.main-nav__dropdown a, .main-nav__item:not(.main-nav__item--dropdown) > .main-nav__link').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.matchMedia('(max-width: 980px)').matches) closeMenu();
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 980) closeMenu();
+    });
+  }
+
+  initMobileNav();
+  document.addEventListener('astro:page-load', initMobileNav);
+</script>

@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Newsletter" description="Subscribe to the Future Media newsletter for industry insights and updates.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Newsletter</h1>
+      <p>Stay informed with the latest media trends, campaign insights, and Future Media news.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="container">
+      <div class="gated-form" style="max-width: 560px;">
+        <h3>Subscribe to Our Newsletter</h3>
+        <p>Get monthly insights on Namibia's media landscape, advertising best practices, and exclusive offers delivered to your inbox.</p>
+        <form id="newsletter-form">
+          <div class="form-group">
+            <label for="nl-name">Full Name</label>
+            <input type="text" id="nl-name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="nl-email">Email Address</label>
+            <input type="email" id="nl-email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="nl-company">Company (optional)</label>
+            <input type="text" id="nl-company" name="company" />
+          </div>
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+        <div id="nl-success" style="display: none; text-align: center; padding: 20px 0;">
+          <p style="color: #313E4A; font-weight: 600; font-size: 16px;">You're subscribed! Check your inbox for a confirmation email.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  function initNewsletter() {
+    const form = document.getElementById('newsletter-form') as HTMLFormElement;
+    const success = document.getElementById('nl-success');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.style.display = 'none';
+      if (success) success.style.display = 'block';
+    });
+  }
+  initNewsletter();
+  document.addEventListener('astro:page-load', initNewsletter);
+</script>

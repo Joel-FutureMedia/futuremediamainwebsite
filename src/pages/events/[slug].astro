@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { events } from '../../data/events';
+
+export function getStaticPaths() {
+  return events.map((event) => ({
+    params: { slug: event.slug },
+    props: { event },
+  }));
+}
+
+const { event } = Astro.props;
+---
+
+<BaseLayout title={event.title} description={event.excerpt}>
+  <div class="article-hero">
+    <img src={event.image} alt={event.title} />
+  </div>
+  <div class="article-meta">
+    <span class="article-meta__date">{event.date} · {event.location}</span>
+    <h1>{event.title}</h1>
+  </div>
+  <div class="article-body" set:html={event.content} />
+</BaseLayout>

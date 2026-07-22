@@ -1,0 +1,238 @@
+---
+---
+
+<div class="wa-fab" id="wa-fab">
+  <button class="wa-fab__btn" id="wa-open" aria-label="Open live chat" type="button">
+    <img src="/assets/icons/live-chat.png" alt="" width="28" height="28" />
+  </button>
+
+  <div class="wa-popup" id="wa-popup" hidden>
+    <div class="wa-popup__panel">
+      <div class="whatsapp-header">
+        <div class="whatsapp-header__avatar">FM</div>
+        <div class="whatsapp-header__info">
+          <h3>Future Media</h3>
+          <span>Online · Typically replies instantly</span>
+        </div>
+        <button class="wa-popup__close" id="wa-close" type="button" aria-label="Close chat">×</button>
+      </div>
+      <div class="whatsapp-messages" id="chat-messages">
+        <div class="whatsapp-msg whatsapp-msg--bot">
+          Welcome to Future Media! By continuing, you agree to Future Media collecting and using your information to respond to your enquiry, in accordance with our privacy policy.
+          <div class="whatsapp-msg__time">Now</div>
+        </div>
+        <div class="whatsapp-msg whatsapp-msg--bot">
+          How can we help you today? Reply with a number or tap an option below:<br /><br />
+          1️⃣ Free media audit<br />
+          2️⃣ Brand information<br />
+          3️⃣ Latest offers<br />
+          4️⃣ Company profile<br />
+          5️⃣ Make an appointment<br />
+          6️⃣ Sponsorship / partnership<br />
+          7️⃣ Newsletter sign-up<br />
+          8️⃣ Speak to someone urgently
+          <div class="whatsapp-msg__time">Now</div>
+        </div>
+      </div>
+      <div class="whatsapp-quick-replies" id="quick-replies">
+        <button type="button" data-reply="1">1️⃣ Media audit</button>
+        <button type="button" data-reply="2">2️⃣ Brands</button>
+        <button type="button" data-reply="3">3️⃣ Offers</button>
+        <button type="button" data-reply="4">4️⃣ Company profile</button>
+        <button type="button" data-reply="5">5️⃣ Appointment</button>
+        <button type="button" data-reply="6">6️⃣ Partnership</button>
+        <button type="button" data-reply="7">7️⃣ Newsletter</button>
+        <button type="button" data-reply="8">8️⃣ Speak urgently</button>
+      </div>
+      <div class="whatsapp-input">
+        <input type="text" id="chat-input" placeholder="Type a message or number..." autocomplete="off" />
+        <button type="button" id="chat-send" aria-label="Send">➤</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .wa-fab {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9999;
+  }
+
+  .wa-fab__btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    border: none;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .wa-fab__btn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  }
+
+  .wa-fab__btn img {
+    filter: brightness(0) invert(1);
+    width: 28px;
+    height: 28px;
+  }
+
+  .wa-popup {
+    position: absolute;
+    right: 0;
+    bottom: 76px;
+    width: min(380px, calc(100vw - 32px));
+  }
+
+  .wa-popup__panel {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(49, 62, 74, 0.35);
+    background: #ECE5DD;
+  }
+
+  .wa-popup .whatsapp-header {
+    position: relative;
+    padding-right: 48px;
+  }
+
+  .wa-popup__close {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 28px;
+    line-height: 1;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+  }
+
+  .wa-popup .whatsapp-messages {
+    height: 320px;
+  }
+
+  .wa-popup[hidden] {
+    display: none !important;
+  }
+</style>
+
+<script>
+  const responses: Record<string, string> = {
+    '1': 'Great choice! A free media audit helps us recommend the right mix for your brand.\n\nPlease share:\n• Your full name\n• Company\n• Email\n• What you want to achieve (awareness, launch, retail, etc.)\n\nOr visit /contact to complete our full 7-step media audit form. A media expert will follow up within 1 business day.',
+    '2': 'Which brand profile would you like?\n\n1. 99 FM\n2. Radio Omulunga\n3. One Africa\n4. On One Sports\n5. Entryfy\n6. Specials.na\n7. Promobasket\n8. Property News\n9. Shop Beat\n\nReply with a number, then share your email and we\'ll send the profile PDF.',
+    '3': 'Current top offers:\n\n• New Client Welcome — 20% off first radio package\n• Radio + Digital Combo — digital add-on at 30% off\n• Billboard Bundle — 3-for-2 Windhoek sites\n• Summer Radio Blast — 100+ spots with free creative\n• Podcast Pilot — complimentary branded episode\n\nFull details: /advertise/latest-offers\n\nWould you like to enquire about any of these? Reply YES with your name + email.',
+    '4': 'Please share your email address and we\'ll send you our company profile.\n\nYour email + this WhatsApp number will be logged so our team can follow up if needed.',
+    '5': 'Happy to arrange an appointment.\n\n1. What would you like to discuss? (Audio & Visual / Digital / Experiential / Technology / Other)\n2. Preferred date\n3. Morning or Afternoon\n4. Full name · Company · Email\n\nWe\'ll confirm within 1 business day (we don\'t auto-book).',
+    '6': 'Sponsorship & partnership requests:\n\n1. Sponsorship of a Future Media event\n2. Partnership proposal\n3. Other\n\nReply with the type, a short brief (max 500 characters), plus company name, your name and email. Our team will respond within 3 business days.',
+    '7': 'Subscribe to our newsletter.\n\nPlease send:\n• Full name\n• Email address\n• Language preference (English / Afrikaans)\n\nYou\'ll get media insights and offers from Future Media.',
+    '8': 'Please hold — we\'re connecting you with a team member right now.\n\nBusiness hours: Mon–Fri, 08:00–17:00.\nOutside hours we\'ll respond first thing next business day.\n\nFor immediate help call 083 000 1000.',
+    menu: 'Main menu:\n1️⃣ Free media audit\n2️⃣ Brand information\n3️⃣ Latest offers\n4️⃣ Company profile\n5️⃣ Make an appointment\n6️⃣ Sponsorship / partnership\n7️⃣ Newsletter sign-up\n8️⃣ Speak to someone urgently\n\nType 0 or menu anytime to return here.',
+    default: 'Sorry, I didn\'t get that. Reply with a number from the menu (1–8), or type menu to start again.',
+  };
+
+  function getTime() {
+    const now = new Date();
+    return `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+  }
+
+  function addMessage(text: string, isUser: boolean) {
+    const messages = document.getElementById('chat-messages');
+    if (!messages) return;
+    const msg = document.createElement('div');
+    msg.className = `whatsapp-msg ${isUser ? 'whatsapp-msg--user' : 'whatsapp-msg--bot'}`;
+    msg.innerHTML = `${text.replace(/\n/g, '<br>')}<div class="whatsapp-msg__time">${getTime()}</div>`;
+    messages.appendChild(msg);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function resolveKey(text: string): string {
+    const t = text.trim().toLowerCase();
+    if (t === '0' || t === 'menu') return 'menu';
+    if (/^[1-8]$/.test(t)) return t;
+    if (t.includes('audit') || t.includes('media')) return '1';
+    if (t.includes('brand')) return '2';
+    if (t.includes('offer') || t.includes('deal')) return '3';
+    if (t.includes('company') || t.includes('profile')) return '4';
+    if (t.includes('appoint')) return '5';
+    if (t.includes('sponsor') || t.includes('partner')) return '6';
+    if (t.includes('news')) return '7';
+    if (t.includes('urgent') || t.includes('human') || t.includes('agent')) return '8';
+    return 'default';
+  }
+
+  function handleUserMessage(text: string) {
+    addMessage(text, true);
+    const key = resolveKey(text);
+    setTimeout(() => addMessage(responses[key] || responses.default, false), 600);
+  }
+
+  function openChat() {
+    const popup = document.getElementById('wa-popup');
+    if (popup) popup.hidden = false;
+  }
+
+  function closeChat() {
+    const popup = document.getElementById('wa-popup');
+    if (popup) popup.hidden = true;
+  }
+
+  function initWhatsAppChat() {
+    const openBtn = document.getElementById('wa-open');
+    const closeBtn = document.getElementById('wa-close');
+    const input = document.getElementById('chat-input') as HTMLInputElement | null;
+    const sendBtn = document.getElementById('chat-send');
+    const quickReplies = document.getElementById('quick-replies');
+
+    openBtn?.addEventListener('click', () => {
+      const popup = document.getElementById('wa-popup');
+      if (popup?.hidden) openChat();
+      else closeChat();
+    });
+
+    closeBtn?.addEventListener('click', closeChat);
+
+    sendBtn?.addEventListener('click', () => {
+      if (input?.value.trim()) {
+        handleUserMessage(input.value.trim());
+        input.value = '';
+      }
+    });
+
+    input?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && input.value.trim()) {
+        handleUserMessage(input.value.trim());
+        input.value = '';
+      }
+    });
+
+    quickReplies?.querySelectorAll('button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-reply') || '';
+        handleUserMessage(key);
+      });
+    });
+
+    document.querySelectorAll('[data-open-chat]').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openChat();
+      });
+    });
+  }
+
+  initWhatsAppChat();
+  document.addEventListener('astro:page-load', initWhatsAppChat);
+</script>

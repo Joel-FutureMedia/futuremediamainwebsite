@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<script is:inline>
+  window.location.replace('/');
+</script>
+
+<BaseLayout title="Live Chat">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Live Chat</h1>
+      <p>Opening chat… Use the green button at the bottom right on any page.</p>
+      <p style="margin-top: 20px;"><button type="button" class="btn-primary" data-open-chat>Open chat</button></p>
+    </div>
+  </div>
+</BaseLayout>

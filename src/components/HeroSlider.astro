@@ -1,0 +1,100 @@
+---
+import { slides } from '../data/slides';
+---
+
+<section class="hero" id="hero-slider" aria-roledescription="carousel">
+  <div class="hero__viewport">
+    <div class="hero__track" id="hero-track">
+      {slides.map((slide, i) => (
+        <article class={`hero__banner-slide${i === 0 ? ' is-active' : ''}`} data-slide={i} aria-hidden={i !== 0}>
+          <div class="hero__banner-inner">
+            <div class="hero__content">
+              <h1 class="hero__heading">{slide.heading}</h1>
+              <p class="hero__subheading">{slide.subheading}</p>
+              <div class="hero__cta-row">
+                <a href={slide.ctaLink} class="hero__cta">{slide.cta}</a>
+                {slide.secondaryCta && (
+                  <a href={slide.secondaryCtaLink} class="hero__cta hero__cta--ghost">{slide.secondaryCta}</a>
+                )}
+              </div>
+            </div>
+            <div class="hero__media">
+              <img src={slide.image} alt="" loading="eager" decoding="async" fetchpriority={i === 0 ? 'high' : 'low'} />
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+
+  <div class="hero__controls">
+    <div class="hero__indicators">
+      {slides.map((_, i) => (
+        <button
+          type="button"
+          class={`hero__indicator${i === 0 ? ' active' : ''}`}
+          data-indicator={i}
+          aria-label={`Go to slide ${i + 1}`}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  function initHeroSlider() {
+    const hero = document.getElementById('hero-slider');
+    const track = document.getElementById('hero-track');
+    if (!hero || !track || hero.dataset.sliderReady === '1') return;
+    hero.dataset.sliderReady = '1';
+
+    const slides = hero.querySelectorAll('.hero__banner-slide');
+    const indicators = hero.querySelectorAll('.hero__indicator');
+    let current = 0;
+    let timer: ReturnType<typeof setInterval> | undefined;
+    const total = slides.length;
+
+    function goTo(index: number) {
+      const next = ((index % total) + total) % total;
+      if (next === current) return;
+      current = next;
+
+      track.style.transform = `translate3d(-${current * 100}%, 0, 0)`;
+
+      slides.forEach((slide, i) => {
+        const active = i === current;
+        slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+        slide.classList.toggle('is-active', active);
+      });
+
+      indicators.forEach((ind, i) => {
+        ind.classList.toggle('active', i === current);
+      });
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      timer = setInterval(() => goTo(current + 1), 2800);
+    }
+
+    function stopAutoplay() {
+      if (timer) clearInterval(timer);
+    }
+
+    indicators.forEach((ind) => {
+      ind.addEventListener('click', () => {
+        const idx = parseInt(ind.getAttribute('data-indicator') || '0', 10);
+        goTo(idx);
+        startAutoplay();
+      });
+    });
+
+    hero.addEventListener('mouseenter', stopAutoplay);
+    hero.addEventListener('mouseleave', startAutoplay);
+
+    startAutoplay();
+  }
+
+  initHeroSlider();
+  document.addEventListener('astro:page-load', initHeroSlider);
+</script>

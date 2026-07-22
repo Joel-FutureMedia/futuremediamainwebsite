@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f0f1f2"/>
+  <rect x="100" y="60" width="250" height="380" rx="4" fill="#313E4A"/>
+  <rect x="120" y="80" width="210" height="120" fill="#E3564E" opacity="0.3"/>
+  <text x="130" y="140" font-family="Arial, sans-serif" font-size="11" fill="white" opacity="0.8">YOUR BRAND</text>
+  <text x="130" y="165" font-family="Arial, sans-serif" font-size="11" fill="white" opacity="0.8">HERE</text>
+  <rect x="380" y="60" width="320" height="180" fill="#313E4A" opacity="0.08"/>
+  <text x="60" y="30" font-family="Arial, sans-serif" font-size="13" fill="#E3564E" font-weight="bold" letter-spacing="2">OUTDOOR ADVERTISING</text>
+  <text x="380" y="300" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#313E4A">Masterclass</text>
+  <text x="380" y="340" font-family="Arial, sans-serif" font-size="16" fill="#5a6570">Billboards · Transit · Street furniture</text>
+</svg>

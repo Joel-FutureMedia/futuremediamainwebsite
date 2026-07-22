@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const categories = [
+  {
+    title: 'Audio & Visual',
+    items: [
+      { name: 'Radio & TV', desc: 'Reach audiences across our radio and TV brands.', cta: 'See more', href: '/brands' },
+      { name: 'Streaming Pre-Roll', desc: 'Pre-roll inventory on streaming properties.', cta: 'Find out more', href: '/contact?interest=streaming' },
+      { name: 'Production', desc: 'In-house studio for spots, podcasts and branded content.', cta: 'Find out more', href: '/contact?interest=production' },
+    ],
+  },
+  {
+    title: 'Digital',
+    items: [
+      { name: 'Website Advertising', desc: 'Display and sponsorship on Future Media digital properties.', cta: 'Get rate card', href: '/about/company-profile' },
+      { name: 'Specials.na', desc: 'Deals audience for promotional campaigns.', cta: 'Visit platform', href: 'https://specials.na' },
+    ],
+  },
+  {
+    title: 'Experiential',
+    items: [
+      { name: 'Activations', desc: 'On-ground brand experiences that drive engagement.', cta: 'Submit a brief', href: '/contact?interest=activations' },
+      { name: 'Sponsorships & Partnerships', desc: 'Event and content sponsorship opportunities.', cta: 'Submit a brief', href: '/contact?interest=sponsorship' },
+      { name: 'Events', desc: 'Expos, open days and live media experiences.', cta: 'View events', href: '/events' },
+    ],
+  },
+  {
+    title: 'Technology & Innovation',
+    items: [
+      { name: 'Shop Beat', desc: 'In-store retail media — Namibia-only product page.', cta: 'Request a demo', href: '/shop-beat' },
+      { name: 'Entryfy', desc: 'B2B access and engagement technology.', cta: 'Visit Entryfy', href: 'https://entryfy.com' },
+    ],
+  },
+  {
+    title: 'Specialist Platforms',
+    items: [
+      { name: 'Promobasket', desc: 'Promotional basket media for shoppers.', cta: 'Find out more', href: '/brands#promobasket' },
+      { name: 'Property News', desc: 'Property publishing audiences.', cta: 'Find out more', href: '/brands#property-news' },
+    ],
+  },
+  {
+    title: 'Coming Soon',
+    items: [
+      { name: 'Influencer Marketing', desc: 'Creator partnerships for Namibian brands — launching soon.', cta: 'Get notified', href: '/news/newsletter' },
+    ],
+  },
+];
+---
+
+<BaseLayout title="Advertise — Solutions" description="Advertising solutions from Future Media — audio, digital, experiential, technology and specialist platforms.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Advertise with Future Media</h1>
+      <p>Put your brand in front of Namibia's audiences — then get a free media audit tailored to your goals.</p>
+      <div class="proof-stats">
+        <div><strong>2.5M+</strong><span>Weekly radio reach</span></div>
+        <div><strong>12+</strong><span>Brands &amp; platforms</span></div>
+        <div><strong>4.5M+</strong><span>Weekly outdoor impressions</span></div>
+        <div><strong>1.2M+</strong><span>Monthly digital views</span></div>
+      </div>
+      <p style="margin-top: 24px;"><a href="/contact" class="btn-primary">Get a free media audit</a></p>
+    </div>
+  </div>
+
+  <div class="page-content">
+    <div class="container" style="max-width: 900px;">
+      <h2 style="text-align: center; margin-bottom: 32px;">Solutions</h2>
+      <div class="accordion" id="solutions-accordion">
+        {categories.map((cat, i) => (
+          <div class={`accordion__item${i === 0 ? ' is-open' : ''}`}>
+            <button type="button" class="accordion__trigger" data-accordion-trigger>
+              {cat.title}
+              <span class="accordion__arrow">▾</span>
+            </button>
+            <div class="accordion__panel">
+              <div class="accordion__cards">
+                {cat.items.map((item) => (
+                  <div class="accordion__card">
+                    <h3>{item.name}</h3>
+                    <p>{item.desc}</p>
+                    <a href={item.href}>{item.cta} →</a>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="/contact" class="btn-primary">Get a free media audit</a>
+      </div>
+
+      <div class="feature-grid" style="margin-top: 48px;">
+        <a href="/advertise/latest-offers" class="feature-card" style="text-decoration: none;">
+          <h3>Latest Offers</h3>
+          <p>Time-limited deals — find out more on each offer.</p>
+        </a>
+        <a href="/advertise/audiences-insights" class="feature-card" style="text-decoration: none;">
+          <h3>See our results</h3>
+          <p>Audiences &amp; Insights — universe and brand teasers.</p>
+        </a>
+        <a href="/advertise/advertising-packages" class="feature-card" style="text-decoration: none;">
+          <h3>Packages</h3>
+          <p>Filterable advertising packages and webstore cards.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .proof-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 800px;
+    margin: 32px auto 0;
+  }
+
+  .proof-stats div {
+    text-align: center;
+  }
+
+  .proof-stats strong {
+    display: block;
+    font-size: 28px;
+    color: #E3564E;
+    font-weight: 700;
+  }
+
+  .proof-stats span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .accordion__item {
+    border: 1px solid #e2e5e8;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .accordion__trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #313E4A;
+    text-align: left;
+  }
+
+  .accordion__arrow {
+    color: #E3564E;
+    transition: transform 0.25s;
+  }
+
+  .accordion__item.is-open .accordion__arrow {
+    transform: rotate(180deg);
+  }
+
+  .accordion__panel {
+    display: none;
+    padding: 0 20px 20px;
+  }
+
+  .accordion__item.is-open .accordion__panel {
+    display: block;
+  }
+
+  .accordion__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .accordion__card {
+    background: #f4f5f6;
+    border-radius: 6px;
+    padding: 16px;
+  }
+
+  .accordion__card h3 {
+    font-size: 15px;
+    color: #313E4A;
+    margin-bottom: 6px;
+  }
+
+  .accordion__card p {
+    font-size: 13px;
+    color: #5a6570;
+    margin-bottom: 10px;
+  }
+
+  .accordion__card a {
+    font-size: 13px;
+    font-weight: 600;
+    color: #E3564E;
+  }
+
+  @media (max-width: 700px) {
+    .proof-stats {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+
+<script>
+  function initAccordion() {
+    const root = document.getElementById('solutions-accordion');
+    if (!root) return;
+    root.querySelectorAll('[data-accordion-trigger]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.accordion__item');
+        const wasOpen = item?.classList.contains('is-open');
+        root.querySelectorAll('.accordion__item').forEach((el) => el.classList.remove('is-open'));
+        if (!wasOpen) item?.classList.add('is-open');
+      });
+    });
+  }
+  initAccordion();
+  document.addEventListener('astro:page-load', initAccordion);
+</script>

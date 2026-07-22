@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const brands = [
+  {
+    id: '99-fm',
+    name: '99 FM',
+    blurb: 'Windhoek\'s favourite hit music station — youthful, energetic, and always on trend.',
+    image: '/assets/images/brands/99fm.png',
+    website: '#',
+  },
+  {
+    id: 'omulunga',
+    name: 'Radio Omulunga',
+    blurb: 'Northern Namibia\'s voice — broadcasting in Oshiwambo and celebrating regional culture.',
+    image: '/assets/images/brands/omulunga.png',
+    website: '#',
+  },
+  {
+    id: 'one-africa',
+    name: 'One Africa',
+    blurb: 'Contemporary African entertainment across radio and digital for a new generation.',
+    image: '/assets/images/brands/oneafrica.png',
+    website: '#',
+  },
+  {
+    id: 'on-one',
+    name: 'On One Sports',
+    blurb: 'Namibia\'s home for sports — cricket, rugby, football coverage and sports talk.',
+    image: '/assets/images/brands/onone.png',
+    website: '#',
+  },
+  {
+    id: 'entryfy',
+    name: 'Entryfy',
+    blurb: 'B2B technology sub-brand for access and engagement solutions.',
+    image: '/assets/images/brands/entryfy.png',
+    website: 'https://entryfy.com',
+  },
+  {
+    id: 'specials',
+    name: 'Specials.na',
+    blurb: 'B2C deals platform — helps advertisers evaluate the consumer deals audience.',
+    image: '/assets/images/brands/specials.png',
+    website: 'https://specials.na',
+  },
+  {
+    id: 'promobasket',
+    name: 'Promobasket',
+    blurb: 'Promotional and basket media brand connecting shoppers with offers.',
+    image: '/assets/images/brands/promobasket.png',
+    website: '#',
+  },
+  {
+    id: 'property-news',
+    name: 'Property News',
+    blurb: 'Property publishing brand for listings, insights and real-estate audiences.',
+    image: '/assets/images/brands/propertynews.png',
+    website: '#',
+  },
+  {
+    id: 'shop-beat',
+    name: 'Shop Beat',
+    blurb: 'Exclusive local retail media partner — in-store audio for Namibia. No SA redirect.',
+    image: '/assets/images/brands/shopbeat.png',
+    website: '/shop-beat',
+  },
+];
+---
+
+<BaseLayout title="Our Brands" description="Future Media brand portfolio — radio, TV, digital, retail media and specialist platforms.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Our Brands</h1>
+      <p>8–12 brand cards across radio, digital, retail media and specialist platforms. Request profiles by email — documents are gated.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="container">
+      <div class="card-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1100px;">
+        {brands.map((brand) => (
+          <article class="card" id={brand.id}>
+            <div class="card__image">
+              <img src={brand.image} alt={brand.name} />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">{brand.name}</h3>
+              <p class="card__excerpt">{brand.blurb}</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+                <a href="/about/company-profile" class="card__link">Request brand profile</a>
+                {brand.website !== '#' && (
+                  <a href={brand.website} class="card__link" style="color: #313E4A;" {...(brand.website.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {})}>
+                    Visit website
+                  </a>
+                )}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="feature-grid" style="max-width: 900px; margin: 48px auto 0;">
+        <a href="/advertise/latest-offers" class="feature-card" style="text-decoration: none;">
+          <h3>Explore our deals</h3>
+          <p>Time-limited offers curated for urgency.</p>
+        </a>
+        <a href="/advertise/solutions" class="feature-card" style="text-decoration: none;">
+          <h3>Explore solutions</h3>
+          <p>Audio, digital, experiential and technology.</p>
+        </a>
+        <a href="/contact" class="feature-card" style="text-decoration: none;">
+          <h3>Get a free media audit</h3>
+          <p>Tell us your goals — we recommend the mix.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

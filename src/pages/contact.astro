@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact Us" description="Contact Future Media — address, multi-step media audit enquiry form, sales@futuremedia.com.na">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Address, map and our multi-step enquiry form — same structure as the free media audit.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <div class="contact-info__item">
+            <div>
+              <strong>Address</strong>
+              <span>42 &amp; 44 Hyper Motor City Path, Windhoek, Namibia</span>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div>
+              <strong>Telephone</strong>
+              <span><a href="tel:+27830001000">083 000 1000</a></span>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div>
+              <strong>Sales</strong>
+              <span><a href="mailto:sales@futuremedia.com.na">sales@futuremedia.com.na</a></span>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div>
+              <strong>General</strong>
+              <span><a href="mailto:info@futuremedia.com.na">info@futuremedia.com.na</a></span>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div>
+              <strong>Office Hours</strong>
+              <span>Monday – Friday, 08:00 – 17:00</span>
+            </div>
+          </div>
+          <div style="margin-top: 24px; border-radius: 8px; overflow: hidden; border: 1px solid #e2e5e8;">
+            <iframe
+              title="Future Media location"
+              src="https://maps.google.com/maps?q=Hyper%20Motor%20City%20Windhoek&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="220"
+              style="border:0; display:block;"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="gated-form" style="margin: 0; max-width: none;" id="media-audit-form">
+          <h3>Free Media Audit</h3>
+          <p style="font-size: 12px; color: #5a6570; margin-bottom: 16px;">
+            By clicking submit you acknowledge your data may be shared with a Future Media sales representative to fulfil your request, and agree to our Privacy Policy and Terms &amp; Conditions.
+          </p>
+          <div class="audit-progress" id="audit-progress">Step 1 of 4</div>
+
+          <div class="audit-step" data-step="1">
+            <label style="font-weight: 600; display: block; margin-bottom: 12px;">What type of campaign are you planning?</label>
+            <div class="option-tiles" data-multi="true">
+              {['Brand awareness', 'Product Launch', 'Promotions & specials', 'Event promotion', 'Retail / In-store', 'Digital', 'Not sure yet'].map((o) => (
+                <button type="button" class="option-tile">{o}</button>
+              ))}
+            </div>
+          </div>
+
+          <div class="audit-step" data-step="2" hidden>
+            <label style="font-weight: 600; display: block; margin-bottom: 12px;">Where are you located?</label>
+            <div class="form-group">
+              <select id="audit-location" style="width:100%; padding:10px 14px; border:1px solid #e2e5e8; border-radius:4px; font-family:inherit;">
+                <option value="">Select…</option>
+                <option>Windhoek</option>
+                <option>Swakopmund</option>
+                <option>Walvis Bay</option>
+                <option>Oshakati</option>
+                <option>Rundu</option>
+                <option>Lüderitz</option>
+                <option>Other Namibia</option>
+                <option>South Africa</option>
+                <option>Other country</option>
+              </select>
+            </div>
+            <label style="font-weight: 600; display: block; margin: 16px 0 12px;">Primary audience</label>
+            <div class="option-tiles">
+              {['Mass market consumers', 'Working adults (Middle income)', 'Affluent consumers', 'Youth & Young Adults (18-25)', 'Families & households', 'Business owners', 'Not sure yet'].map((o) => (
+                <button type="button" class="option-tile">{o}</button>
+              ))}
+            </div>
+          </div>
+
+          <div class="audit-step" data-step="3" hidden>
+            <label style="font-weight: 600; display: block; margin-bottom: 12px;">When are you looking to advertise?</label>
+            <div class="option-tiles">
+              {['As soon as possible', 'Within 1-3 months', '3-6 months', 'Planning for next year', 'Not sure yet'].map((o) => (
+                <button type="button" class="option-tile">{o}</button>
+              ))}
+            </div>
+            <label style="font-weight: 600; display: block; margin: 16px 0 12px;">Approximate budget (optional)</label>
+            <div class="option-tiles">
+              {['Under N$20,000', 'N$20,000 – N$50,000', 'N$50,000 – N$150,000', 'N$150,000+', 'Prefer not to say'].map((o) => (
+                <button type="button" class="option-tile">{o}</button>
+              ))}
+            </div>
+          </div>
+
+          <div class="audit-step" data-step="4" hidden>
+            <div class="form-group"><label for="a-name">Full Name</label><input type="text" id="a-name" required /></div>
+            <div class="form-group"><label for="a-email">Email</label><input type="email" id="a-email" required /></div>
+            <div class="form-group"><label for="a-phone">Phone</label><input type="tel" id="a-phone" required /></div>
+            <div class="form-group"><label for="a-company">Company</label><input type="text" id="a-company" required /></div>
+            <div class="form-group"><label for="a-notes">Anything else? (optional)</label><textarea id="a-notes" rows="3" style="width:100%;padding:10px 14px;border:1px solid #e2e5e8;border-radius:4px;font-family:inherit;"></textarea></div>
+          </div>
+
+          <div class="audit-step" data-step="done" hidden>
+            <p style="font-weight: 600; color: #313E4A;">Thank you — one of our media experts will be in touch to discuss the best solutions for you.</p>
+            <p style="font-size: 14px; color: #5a6570; margin-top: 8px;">A confirmation will also be sent to sales@futuremedia.com.na.</p>
+          </div>
+
+          <div class="audit-nav" id="audit-nav" style="display: flex; gap: 12px; margin-top: 20px;">
+            <button type="button" class="btn-primary" id="audit-back" style="background:#5a6570;" hidden>Back</button>
+            <button type="button" class="btn-primary" id="audit-next">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .audit-progress {
+    font-size: 13px;
+    font-weight: 600;
+    color: #E3564E;
+    margin-bottom: 16px;
+  }
+
+  .option-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .option-tile {
+    border: 1px solid #e2e5e8;
+    background: #fff;
+    border-radius: 20px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: #313E4A;
+    cursor: pointer;
+  }
+
+  .option-tile.is-selected {
+    border-color: #E3564E;
+    background: rgba(227, 86, 78, 0.08);
+    color: #E3564E;
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  function initAuditForm() {
+    const root = document.getElementById('media-audit-form');
+    if (!root || root.getAttribute('data-ready')) return;
+    root.setAttribute('data-ready', '1');
+
+    let step = 1;
+    const total = 4;
+    const progress = document.getElementById('audit-progress');
+    const back = document.getElementById('audit-back');
+    const next = document.getElementById('audit-next');
+    const nav = document.getElementById('audit-nav');
+
+    root.querySelectorAll('.option-tiles').forEach((group) => {
+      const multi = group.getAttribute('data-multi') === 'true';
+      group.querySelectorAll('.option-tile').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          if (!multi) group.querySelectorAll('.option-tile').forEach((b) => b.classList.remove('is-selected'));
+          btn.classList.toggle('is-selected');
+        });
+      });
+    });
+
+    function showStep(n: number) {
+      step = n;
+      root.querySelectorAll('.audit-step').forEach((el) => {
+        const s = el.getAttribute('data-step');
+        (el as HTMLElement).hidden = s !== String(n) && !(n === 5 && s === 'done');
+      });
+      if (n <= total) {
+        if (progress) progress.textContent = `Step ${n} of ${total}`;
+        if (nav) nav.style.display = 'flex';
+        if (back) back.hidden = n === 1;
+        if (next) next.textContent = n === total ? 'Submit' : 'Next';
+      } else {
+        if (progress) progress.textContent = 'Complete';
+        if (nav) nav.style.display = 'none';
+        root.querySelectorAll('.audit-step').forEach((el) => {
+          (el as HTMLElement).hidden = el.getAttribute('data-step') !== 'done';
+        });
+      }
+    }
+
+    back?.addEventListener('click', () => {
+      if (step > 1) showStep(step - 1);
+    });
+
+    next?.addEventListener('click', () => {
+      if (step < total) showStep(step + 1);
+      else showStep(5);
+    });
+
+    showStep(1);
+  }
+
+  initAuditForm();
+  document.addEventListener('astro:page-load', initAuditForm);
+</script>

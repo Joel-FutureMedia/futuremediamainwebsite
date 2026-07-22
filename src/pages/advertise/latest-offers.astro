@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const offers = [
+  {
+    title: 'New Client Welcome',
+    type: 'Seasonal',
+    expiry: '30 September 2026',
+    description: 'First-time advertisers receive 20% off their initial radio campaign package.',
+  },
+  {
+    title: 'Radio + Digital Combo',
+    type: 'Bundle',
+    expiry: '31 August 2026',
+    description: 'Book any radio flight and add a digital social package at 30% reduced rate.',
+  },
+  {
+    title: 'Billboard Bundle',
+    type: 'Bundle',
+    expiry: '15 October 2026',
+    description: 'Book 2 Windhoek billboard sites for 3 months and get a third site free.',
+  },
+];
+---
+
+<BaseLayout title="Latest Offers" description="Time-limited advertising offers from Future Media — max 3 active curated deals.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Latest Offers</h1>
+      <p>Time-limited, curated offers only. Designed to create urgency — not a product catalogue.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="container" style="max-width: 720px;">
+      {offers.map((offer) => (
+        <article class="vacancy-item" style="margin-bottom: 20px;">
+          <div class="vacancy-meta">{offer.type} · Expires {offer.expiry}</div>
+          <h3>{offer.title}</h3>
+          <p>{offer.description}</p>
+          <p style="margin-top: 16px;">
+            <a href={`/contact?offer=${encodeURIComponent(offer.title)}`} class="btn-primary">Find out more</a>
+          </p>
+        </article>
+      ))}
+      <p style="font-size: 13px; color: #5a6570; margin-top: 24px;">
+        Offers auto-unpublish when the expiry date is reached. “Find out more” opens our contact / media audit form pre-tagged with the offer name.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

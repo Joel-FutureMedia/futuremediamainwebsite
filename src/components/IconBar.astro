@@ -1,0 +1,27 @@
+---
+const items = [
+  { label: 'Studio', icon: '/assets/icons/Studio.png', href: 'http://studio.winterknights.com.na/', external: true },
+  { label: 'Solutions', icon: '/assets/icons/solutions.png', href: '/solutions' },
+  { label: 'Special Offers', icon: '/assets/icons/Special Offer.png', href: '/special-offers' },
+  { label: 'Shop Beat', icon: '/assets/icons/Shop Beat.png', href: '/shop-beat' },
+  { label: 'Brands', icon: '/assets/icons/brand.png', href: '/brands' },
+  { label: 'Events', icon: '/assets/icons/Events.png', href: '/events' },
+  { label: 'Live Chat', icon: '/assets/icons/live-chat.png', href: '#', chat: true },
+];
+---
+
+<section class="icon-bar">
+  <div class="icon-bar__inner">
+    {items.map((item) => (
+      <a
+        href={item.href}
+        class="icon-bar__item"
+        {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        {...(item.chat ? { 'data-open-chat': true } : {})}
+      >
+        <img src={item.icon} alt={item.label} width="48" height="48" />
+        <span>{item.label}</span>
+      </a>
+    ))}
+  </div>
+</section>

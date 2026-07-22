@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const packages = [
+  { name: 'Starter Radio', type: 'Radio', price: 'From N$15,000/mo', desc: '50 spots/month — ideal for SMEs building local awareness.' },
+  { name: 'Growth Radio', type: 'Radio', price: 'From N$45,000/mo', desc: '150 spots/month with presenter endorsements available.' },
+  { name: 'Digital Presence', type: 'Digital', price: 'From N$5,000/mo', desc: 'Social + display on Future Media digital properties.' },
+  { name: 'Outdoor 3-Month', type: 'Outdoor', price: 'Custom', desc: 'Billboard packages in Windhoek and major centres.' },
+  { name: 'Integrated Campaign', type: 'Integrated', price: 'Custom', desc: 'Radio + digital + outdoor with dedicated account manager.' },
+  { name: 'Shop Beat Retail', type: 'Retail', price: 'Custom', desc: 'In-store audio packages for Namibia retailers and malls.' },
+];
+---
+
+<BaseLayout title="Advertising Packages" description="Filterable advertising packages — radio, digital, outdoor, integrated and retail media.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Advertising Packages</h1>
+      <p>Redesigned webstore — filterable package cards for businesses of every size.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="container">
+      <div class="pkg-filters" id="pkg-filters">
+        {['All', 'Radio', 'Digital', 'Outdoor', 'Integrated', 'Retail'].map((f) => (
+          <button type="button" class={`pkg-filter${f === 'All' ? ' is-active' : ''}`} data-filter={f}>{f}</button>
+        ))}
+      </div>
+      <div class="card-grid" id="pkg-grid" style="max-width: 1100px;">
+        {packages.map((pkg) => (
+          <article class="card" data-type={pkg.type}>
+            <div class="card__body">
+              <span class="card__date">{pkg.type}</span>
+              <h3 class="card__title">{pkg.name}</h3>
+              <p style="font-weight: 700; color: #E3564E; margin-bottom: 8px;">{pkg.price}</p>
+              <p class="card__excerpt">{pkg.desc}</p>
+              <a href={`/contact?package=${encodeURIComponent(pkg.name)}`} class="card__link">Enquire</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .pkg-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  .pkg-filter {
+    border: 1px solid #e2e5e8;
+    background: #fff;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #313E4A;
+  }
+
+  .pkg-filter.is-active {
+    background: #313E4A;
+    color: #fff;
+    border-color: #313E4A;
+  }
+</style>
+
+<script>
+  function initPkgFilters() {
+    const filters = document.getElementById('pkg-filters');
+    const grid = document.getElementById('pkg-grid');
+    if (!filters || !grid) return;
+    filters.querySelectorAll('.pkg-filter').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filters.querySelectorAll('.pkg-filter').forEach((b) => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const f = btn.getAttribute('data-filter');
+        grid.querySelectorAll('.card').forEach((card) => {
+          const show = f === 'All' || card.getAttribute('data-type') === f;
+          (card as HTMLElement).style.display = show ? '' : 'none';
+        });
+      });
+    });
+  }
+  initPkgFilters();
+  document.addEventListener('astro:page-load', initPkgFilters);
+</script>

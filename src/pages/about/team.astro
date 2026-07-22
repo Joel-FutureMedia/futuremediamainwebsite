@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const team = [
+  { name: 'David Nangolo', role: 'Group CEO', initials: 'DN' },
+  { name: 'Sarah //Hoeses', role: 'Chief Operating Officer', initials: 'SH' },
+  { name: 'Michael Shikongo', role: 'Head of Radio', initials: 'MS' },
+  { name: 'Linda Amutenya', role: 'Head of Digital', initials: 'LA' },
+  { name: 'Petrus //Gowaseb', role: 'Head of Outdoor', initials: 'PG' },
+  { name: 'Grace Mwiya', role: 'Head of Sales', initials: 'GM' },
+  { name: 'James Kauami', role: 'Creative Director', initials: 'JK' },
+  { name: 'Anna Shikwambi', role: 'Head of Events', initials: 'AS' },
+];
+---
+
+<BaseLayout title="Our Team" description="Meet the leadership team behind Future Media.">
+  <div class="page-hero">
+    <div class="container">
+      <h1>Our Team</h1>
+      <p>The people who make Future Media Namibia's most dynamic media organisation.</p>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="container">
+      <div class="team-grid">
+        {team.map((member) => (
+          <div class="team-member">
+            <div class="team-member__photo" style={`background: #313E4A; display: flex; align-items: center; justify-content: center; color: white; font-size: 32px; font-weight: 700;`}>
+              {member.initials}
+            </div>
+            <h3>{member.name}</h3>
+            <p>{member.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

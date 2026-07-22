@@ -1,0 +1,84 @@
+---
+---
+
+<section class="cta-blocks">
+  <div class="container">
+    <div class="cta-blocks__grid">
+      <a href="/advertise/solutions" class="cta-block">
+        <h3>Explore Solutions</h3>
+        <p>Radio, TV, digital, experiential and technology solutions for every campaign goal.</p>
+        <span>View solutions →</span>
+      </a>
+      <a href="/advertise/audiences-insights" class="cta-block">
+        <h3>Audiences &amp; Insights</h3>
+        <p>Universe reach numbers and brand audience teasers — download full data with email capture.</p>
+        <span>See our results →</span>
+      </a>
+      <a href="/advertise/latest-offers" class="cta-block">
+        <h3>Explore Deals</h3>
+        <p>Time-limited offers curated for urgency — not a product catalogue.</p>
+        <span>View offers →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-blocks {
+    background: #f4f5f6;
+    padding: 48px 0;
+  }
+
+  .cta-blocks__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .cta-block {
+    background: #fff;
+    padding: 28px 24px;
+    border-radius: 8px;
+    border: 1px solid #e2e5e8;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+
+  .cta-block:hover {
+    border-color: #E3564E;
+    box-shadow: 0 6px 24px rgba(49, 62, 74, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .cta-block h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #313E4A;
+    margin-bottom: 8px;
+  }
+
+  .cta-block p {
+    font-size: 14px;
+    color: #5a6570;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .cta-block span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #E3564E;
+  }
+
+  @media (max-width: 900px) {
+    .cta-blocks {
+      padding: 36px 16px;
+    }
+
+    .cta-blocks__grid {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+    }
+  }
+</style>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="ev2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c4956a"/>
+      <stop offset="100%" style="stop-color:#8B6914"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#ev2)"/>
+  <rect x="0" y="0" width="800" height="500" fill="#313E4A" opacity="0.5"/>
+  <circle cx="400" cy="200" r="80" fill="none" stroke="white" stroke-width="3" opacity="0.3"/>
+  <circle cx="400" cy="200" r="50" fill="#E3564E" opacity="0.6"/>
+  <text x="60" y="380" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white">99 FM</text>
+  <text x="60" y="420" font-family="Arial, sans-serif" font-size="22" fill="#E3564E">Open Day</text>
+  <text x="60" y="455" font-family="Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.7)">Behind the scenes · Live broadcast</text>
+</svg>

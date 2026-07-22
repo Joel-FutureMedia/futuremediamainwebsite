@@ -1,0 +1,105 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <img src="/assets/logo.png" alt="Future Media" />
+        <p>Namibia's most connected media partner — radio, TV, digital publishing, retail media, activations and technology.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/about/company-profile">About Us</a></li>
+          <li><a href="/advertise/solutions">Advertise</a></li>
+          <li><a href="/brands">Brands</a></li>
+          <li><a href="/shop-beat">Shop Beat</a></li>
+          <li><a href="/vacancies">Vacancies</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Advertise</h4>
+        <ul>
+          <li><a href="/advertise/solutions">Solutions</a></li>
+          <li><a href="/advertise/latest-offers">Latest Offers</a></li>
+          <li><a href="/advertise/advertising-packages">Packages</a></li>
+          <li><a href="/advertise/audiences-insights">Audiences &amp; Insights</a></li>
+          <li><a href="/advertise/terms">Advertising T&amp;Cs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <form class="footer-newsletter" id="footer-newsletter" onsubmit="return false;">
+          <input type="text" name="name" placeholder="Full name" required />
+          <input type="email" name="email" placeholder="Email address" required />
+          <select name="language">
+            <option value="en">English</option>
+            <option value="af">Afrikaans</option>
+          </select>
+          <button type="submit" class="btn-primary" style="width: 100%; border-radius: 4px;">Subscribe</button>
+        </form>
+        <p id="footer-nl-ok" style="display:none; font-size: 13px; color: #E3564E; margin-top: 8px;">You're subscribed — check your inbox.</p>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>&copy; {currentYear} Future Media. All rights reserved.</span>
+      <span>
+        <a href="/advertise/terms">Terms</a> ·
+        <a href="/about/company-profile">Privacy / POPIA</a> ·
+        <a href="mailto:info@futuremedia.com.na">info@futuremedia.com.na</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-newsletter input,
+  .footer-newsletter select {
+    padding: 10px 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-family: inherit;
+    font-size: 13px;
+  }
+
+  .footer-newsletter select option {
+    color: #313E4A;
+  }
+
+  .footer-newsletter input::placeholder {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .site-footer__bottom a {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .site-footer__bottom a:hover {
+    color: #E3564E;
+  }
+</style>
+
+<script>
+  function initFooterNl() {
+    const form = document.getElementById('footer-newsletter') as HTMLFormElement | null;
+    const ok = document.getElementById('footer-nl-ok');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.style.display = 'none';
+      if (ok) ok.style.display = 'block';
+    });
+  }
+  initFooterNl();
+  document.addEventListener('astro:page-load', initFooterNl);
+</script>
