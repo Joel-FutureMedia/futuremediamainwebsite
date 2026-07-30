@@ -36,12 +36,13 @@ const currentYear = new Date().getFullYear();
           <input type="text" name="name" placeholder="Full name" required />
           <input type="email" name="email" placeholder="Email address" required />
           <select name="language">
-            <option value="en">English</option>
-            <option value="af">Afrikaans</option>
+            <option value="ENGLISH">English</option>
+            <option value="AFRIKAANS">Afrikaans</option>
           </select>
           <button type="submit" class="btn-primary" style="width: 100%; border-radius: 4px;">Subscribe</button>
         </form>
         <p id="footer-nl-ok" style="display:none; font-size: 13px; color: #E3564E; margin-top: 8px;">You're subscribed — check your inbox.</p>
+        <p id="footer-nl-err" style="display:none; font-size: 13px; color: #E3564E; margin-top: 8px;"></p>
       </div>
     </div>
     <div class="site-footer__bottom">
@@ -94,10 +95,34 @@ const currentYear = new Date().getFullYear();
   function initFooterNl() {
     const form = document.getElementById('footer-newsletter') as HTMLFormElement | null;
     const ok = document.getElementById('footer-nl-ok');
-    form?.addEventListener('submit', (e) => {
+    const err = document.getElementById('footer-nl-err');
+    if (!form || form.dataset.ready === '1') return;
+    form.dataset.ready = '1';
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      form.style.display = 'none';
-      if (ok) ok.style.display = 'block';
+      if (err) err.style.display = 'none';
+      const fd = new FormData(form);
+      const apiBase = (window as any).__API_BASE__ || 'http://localhost:8080';
+      try {
+        const res = await fetch(`${apiBase}/api/subscriptions`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fullName: fd.get('name'),
+            email: fd.get('email'),
+            language: fd.get('language'),
+          }),
+        });
+        const json = await res.json();
+        if (!res.ok || !json.success) throw new Error(json.message || 'Subscribe failed');
+        form.style.display = 'none';
+        if (ok) ok.style.display = 'block';
+      } catch (ex: any) {
+        if (err) {
+          err.textContent = ex.message || 'Could not subscribe';
+          err.style.display = 'block';
+        }
+      }
     });
   }
   initFooterNl();

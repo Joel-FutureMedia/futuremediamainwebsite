@@ -1,5 +1,60 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getVacancies, mediaUrl, formatDate } from '../lib/api';
+
+export const prerender = false;
+
+const apiVacancies = await getVacancies();
+
+const fallback = [
+  {
+    id: null,
+    title: 'Senior Radio Producer',
+    meta: '99 FM · Windhoek · Full-time',
+    description:
+      'Lead content production for one of Namibia\'s top-rated radio stations. You\'ll manage daily show segments, coordinate with presenters, and develop creative concepts that engage our audience.',
+    image: null as string | null,
+    closingDate: null as string | null,
+  },
+  {
+    id: null,
+    title: 'Digital Marketing Specialist',
+    meta: 'Future Media Group · Windhoek · Full-time',
+    description:
+      'Drive digital campaign strategy across our portfolio of brands. Experience with social media management, content creation, and analytics platforms is essential.',
+    image: null,
+    closingDate: null,
+  },
+  {
+    id: null,
+    title: 'Outdoor Sales Executive',
+    meta: 'Future Media Outdoor · Windhoek · Full-time',
+    description:
+      'Manage client relationships and sell outdoor advertising inventory across our national billboard and transit network. Proven sales track record required.',
+    image: null,
+    closingDate: null,
+  },
+  {
+    id: null,
+    title: 'Broadcast Engineer',
+    meta: 'Radio Omulunga · Oshakati · Full-time',
+    description:
+      'Maintain and optimise broadcast transmission systems. Technical certification in broadcast engineering and experience with digital audio workflows preferred.',
+    image: null,
+    closingDate: null,
+  },
+];
+
+const vacancies = apiVacancies.length
+  ? apiVacancies.map((v: any) => ({
+      id: v.id,
+      title: v.title,
+      meta: v.closingDate ? `Closing: ${formatDate(v.closingDate)}` : 'Open application',
+      description: v.description,
+      image: mediaUrl(v.mediaPath),
+      closingDate: v.closingDate,
+    }))
+  : fallback;
 ---
 
 <BaseLayout title="Vacancies" description="Career opportunities at Future Media — join Namibia's leading media group.">
@@ -12,27 +67,133 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="page-content">
     <div class="container">
       <div class="vacancy-list">
-        <div class="vacancy-item">
-          <h3>Senior Radio Producer</h3>
-          <div class="vacancy-meta">99 FM · Windhoek · Full-time</div>
-          <p>Lead content production for one of Namibia's top-rated radio stations. You'll manage daily show segments, coordinate with presenters, and develop creative concepts that engage our audience.</p>
-        </div>
-        <div class="vacancy-item">
-          <h3>Digital Marketing Specialist</h3>
-          <div class="vacancy-meta">Future Media Group · Windhoek · Full-time</div>
-          <p>Drive digital campaign strategy across our portfolio of brands. Experience with social media management, content creation, and analytics platforms is essential.</p>
-        </div>
-        <div class="vacancy-item">
-          <h3>Outdoor Sales Executive</h3>
-          <div class="vacancy-meta">Future Media Outdoor · Windhoek · Full-time</div>
-          <p>Manage client relationships and sell outdoor advertising inventory across our national billboard and transit network. Proven sales track record required.</p>
-        </div>
-        <div class="vacancy-item">
-          <h3>Broadcast Engineer</h3>
-          <div class="vacancy-meta">Radio Omulunga · Oshakati · Full-time</div>
-          <p>Maintain and optimise broadcast transmission systems. Technical certification in broadcast engineering and experience with digital audio workflows preferred.</p>
+        {vacancies.map((v) => (
+          <div class="vacancy-item" data-vacancy-id={v.id ?? ''}>
+            {v.image && (
+              <div style="margin-bottom:16px;border-radius:8px;overflow:hidden;max-height:220px;">
+                <img src={v.image} alt={v.title} style="width:100%;height:220px;object-fit:cover;" />
+              </div>
+            )}
+            <h3>{v.title}</h3>
+            <div class="vacancy-meta">{v.meta}</div>
+            <p>{v.description}</p>
+            {v.id && (
+              <button type="button" class="btn-primary apply-btn" data-id={v.id} data-title={v.title} style="margin-top:12px;">
+                Apply now
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div id="apply-modal" class="apply-modal" hidden>
+        <div class="apply-modal__backdrop" data-close></div>
+        <div class="apply-modal__panel gated-form" style="margin:0;max-width:520px;">
+          <h3 id="apply-title">Apply for position</h3>
+          <form id="apply-form">
+            <input type="hidden" id="apply-vacancy-id" name="vacancyId" />
+            <div class="form-group"><label for="apply-name">Full Name</label><input type="text" id="apply-name" required /></div>
+            <div class="form-group"><label for="apply-email">Email</label><input type="email" id="apply-email" required /></div>
+            <div class="form-group"><label for="apply-phone">Phone</label><input type="tel" id="apply-phone" /></div>
+            <div class="form-group"><label for="apply-location">Location</label><input type="text" id="apply-location" required /></div>
+            <div class="form-group"><label for="apply-cv">CV (PDF, DOC, DOCX)</label><input type="file" id="apply-cv" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required /></div>
+            <p id="apply-error" style="display:none;color:#E3564E;font-size:13px;margin-bottom:8px;"></p>
+            <div style="display:flex;gap:10px;">
+              <button type="button" class="btn-primary" data-close style="background:#5a6570;">Cancel</button>
+              <button type="submit" class="btn-primary">Submit application</button>
+            </div>
+          </form>
+          <div id="apply-success" hidden>
+            <p style="font-weight:600;color:#313E4A;">Application submitted successfully. We will be in touch.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </BaseLayout>
+
+<style>
+  .apply-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .apply-modal[hidden] { display: none; }
+  .apply-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(49, 62, 74, 0.55);
+  }
+  .apply-modal__panel {
+    position: relative;
+    background: #fff;
+    width: 100%;
+    max-height: 90vh;
+    overflow: auto;
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+  }
+</style>
+
+<script>
+  function initVacancies() {
+    const modal = document.getElementById('apply-modal');
+    const form = document.getElementById('apply-form') as HTMLFormElement | null;
+    const success = document.getElementById('apply-success');
+    const errorEl = document.getElementById('apply-error');
+    const apiBase = (window as any).__API_BASE__ || 'http://localhost:8080';
+    if (!modal || modal.getAttribute('data-ready')) return;
+    modal.setAttribute('data-ready', '1');
+
+    document.querySelectorAll('.apply-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = (btn as HTMLElement).dataset.id || '';
+        const title = (btn as HTMLElement).dataset.title || 'position';
+        (document.getElementById('apply-vacancy-id') as HTMLInputElement).value = id;
+        const t = document.getElementById('apply-title');
+        if (t) t.textContent = `Apply — ${title}`;
+        if (form) form.style.display = 'block';
+        if (success) success.hidden = true;
+        if (errorEl) errorEl.style.display = 'none';
+        modal.hidden = false;
+      });
+    });
+
+    modal.querySelectorAll('[data-close]').forEach((el) => {
+      el.addEventListener('click', () => { modal.hidden = true; });
+    });
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (errorEl) errorEl.style.display = 'none';
+      const fd = new FormData();
+      fd.append('vacancyId', (document.getElementById('apply-vacancy-id') as HTMLInputElement).value);
+      fd.append('fullName', (document.getElementById('apply-name') as HTMLInputElement).value);
+      fd.append('email', (document.getElementById('apply-email') as HTMLInputElement).value);
+      fd.append('phone', (document.getElementById('apply-phone') as HTMLInputElement).value);
+      fd.append('location', (document.getElementById('apply-location') as HTMLInputElement).value);
+      const cv = (document.getElementById('apply-cv') as HTMLInputElement).files?.[0];
+      if (cv) fd.append('cv', cv);
+
+      try {
+        const res = await fetch(`${apiBase}/api/applications/apply`, { method: 'POST', body: fd });
+        const json = await res.json();
+        if (!res.ok || !json.success) throw new Error(json.message || 'Failed to submit');
+        if (form) form.style.display = 'none';
+        if (success) success.hidden = false;
+      } catch (err: any) {
+        if (errorEl) {
+          errorEl.textContent = err.message || 'Failed to submit application';
+          errorEl.style.display = 'block';
+        }
+      }
+    });
+  }
+  initVacancies();
+  document.addEventListener('astro:page-load', initVacancies);
+</script>

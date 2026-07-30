@@ -1,5 +1,27 @@
 ---
-import { newsArticles } from '../data/news';
+import { getApprovedNews, mediaUrl, formatDate, excerpt } from '../lib/api';
+import { newsArticles as fallback } from '../data/news';
+
+export const prerender = false;
+
+const apiNews = await getApprovedNews();
+const newsArticles = apiNews.length
+  ? apiNews.slice(0, 3).map((n: any) => ({
+      id: n.id,
+      title: n.title,
+      excerpt: excerpt(n.description),
+      date: formatDate(n.createdDate),
+      image: mediaUrl(n.mediaPath),
+      href: `/news/${n.id}`,
+    }))
+  : fallback.map((a) => ({
+      id: a.slug,
+      title: a.title,
+      excerpt: a.excerpt,
+      date: a.date,
+      image: a.image,
+      href: `/news/${a.slug}`,
+    }));
 ---
 
 <section class="section">
@@ -15,7 +37,7 @@ import { newsArticles } from '../data/news';
             <span class="card__date">{article.date}</span>
             <h3 class="card__title">{article.title}</h3>
             <p class="card__excerpt">{article.excerpt}</p>
-            <a href={`/news/${article.slug}`} class="card__link">Read more</a>
+            <a href={article.href} class="card__link">Read more</a>
           </div>
         </article>
       ))}

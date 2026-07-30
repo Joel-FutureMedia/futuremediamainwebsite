@@ -1,17 +1,26 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getGallery, mediaUrl } from '../../lib/api';
 
-const galleryImages = [
-  { src: '/assets/images/events/event-1.png', alt: 'Windhoek Media Expo' },
-  { src: '/assets/images/events/event-2.png', alt: '99 FM Open Day' },
-  { src: '/assets/images/events/event-3.png', alt: 'Outdoor Masterclass' },
-  { src: '/assets/images/news/news-1.png', alt: 'Media Landscape 2026' },
-  { src: '/assets/images/news/news-2.png', alt: 'Digital Studio Launch' },
-  { src: '/assets/images/news/news-3.png', alt: 'Cricket Season' },
-  { src: '/assets/slide1.png', alt: 'Campaign Showcase' },
-  { src: '/assets/slide2.png', alt: 'Radio Production' },
-  { src: '/assets/slider3.png', alt: 'Sports Coverage' },
-];
+export const prerender = false;
+
+const apiGallery = await getGallery();
+const galleryImages = apiGallery.length
+  ? apiGallery.map((g: any) => ({
+      src: mediaUrl(g.imagePath),
+      alt: g.title || 'Gallery image',
+    }))
+  : [
+      { src: '/assets/images/events/event-1.png', alt: 'Windhoek Media Expo' },
+      { src: '/assets/images/events/event-2.png', alt: '99 FM Open Day' },
+      { src: '/assets/images/events/event-3.png', alt: 'Outdoor Masterclass' },
+      { src: '/assets/images/news/news-1.png', alt: 'Media Landscape 2026' },
+      { src: '/assets/images/news/news-2.png', alt: 'Digital Studio Launch' },
+      { src: '/assets/images/news/news-3.png', alt: 'Cricket Season' },
+      { src: '/assets/slide1.png', alt: 'Campaign Showcase' },
+      { src: '/assets/slide2.png', alt: 'Radio Production' },
+      { src: '/assets/slider3.png', alt: 'Sports Coverage' },
+    ];
 ---
 
 <BaseLayout title="Gallery" description="Photo gallery from Future Media events, productions, and campaigns.">

@@ -213,9 +213,67 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       if (step > 1) showStep(step - 1);
     });
 
-    next?.addEventListener('click', () => {
-      if (step < total) showStep(step + 1);
-      else showStep(5);
+    next?.addEventListener('click', async () => {
+      if (step < total) {
+        showStep(step + 1);
+        return;
+      }
+
+      const name = (document.getElementById('a-name') as HTMLInputElement)?.value?.trim();
+      const email = (document.getElementById('a-email') as HTMLInputElement)?.value?.trim();
+      const phone = (document.getElementById('a-phone') as HTMLInputElement)?.value?.trim();
+      const company = (document.getElementById('a-company') as HTMLInputElement)?.value?.trim();
+      const notes = (document.getElementById('a-notes') as HTMLTextAreaElement)?.value?.trim();
+      const location = (document.getElementById('audit-location') as HTMLSelectElement)?.value || '';
+
+      const campaigns = Array.from(root.querySelectorAll('.audit-step[data-step="1"] .option-tile.is-selected'))
+        .map((el) => el.textContent?.trim())
+        .filter(Boolean);
+      const audience = root.querySelector('.audit-step[data-step="2"] .option-tile.is-selected')?.textContent?.trim() || '';
+      const timing = root.querySelector('.audit-step[data-step="3"] .option-tiles:not(:last-of-type) .option-tile.is-selected')?.textContent?.trim()
+        || Array.from(root.querySelectorAll('.audit-step[data-step="3"] .option-tile.is-selected')).map((el) => el.textContent?.trim()).join(', ');
+
+      if (!name || !email) {
+        alert('Please fill in your name and email.');
+        return;
+      }
+
+      const message = [
+        `Campaign types: ${campaigns.join(', ') || 'N/A'}`,
+        `Location: ${location || 'N/A'}`,
+        `Audience: ${audience || 'N/A'}`,
+        `Timing / Budget: ${timing || 'N/A'}`,
+        `Company: ${company || 'N/A'}`,
+        `Notes: ${notes || 'N/A'}`,
+      ].join('\n');
+
+      const apiBase = (window as any).__API_BASE__ || 'http://localhost:8080';
+      try {
+        if (next) {
+          next.disabled = true;
+          next.textContent = 'Submitting…';
+        }
+        const res = await fetch(`${apiBase}/api/contact`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fullName: name,
+            email,
+            phone,
+            subject: 'Free Media Audit Enquiry',
+            message,
+          }),
+        });
+        const json = await res.json();
+        if (!res.ok || !json.success) throw new Error(json.message || 'Failed to submit');
+        showStep(5);
+      } catch (err: any) {
+        alert(err.message || 'Could not submit the form. Please try again.');
+        if (next) {
+          next.disabled = false;
+          next.textContent = 'Submit';
+        }
+      }
     });
 
     showStep(1);

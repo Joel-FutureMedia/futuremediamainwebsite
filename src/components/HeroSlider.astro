@@ -1,5 +1,26 @@
 ---
-import { slides } from '../data/slides';
+import { getPublicBanners, getLatestBanner, mediaUrl } from '../lib/api';
+import { slides as fallbackSlides } from '../data/slides';
+
+export const prerender = false;
+
+const banners = await getPublicBanners();
+const latest = banners.length ? null : await getLatestBanner();
+
+const activeBanners = (banners.length ? banners : latest ? [latest] : [])
+  .filter((b: any) => b && (b.active !== false));
+
+const slides = activeBanners.length
+  ? activeBanners.map((b: any) => ({
+      heading: b.title,
+      subheading: b.description,
+      cta: 'Get a free media audit',
+      ctaLink: '/contact',
+      secondaryCta: 'Explore our solutions',
+      secondaryCtaLink: '/advertise/solutions',
+      image: mediaUrl(b.imagePath),
+    }))
+  : fallbackSlides;
 ---
 
 <section class="hero" id="hero-slider" aria-roledescription="carousel">
@@ -53,6 +74,7 @@ import { slides } from '../data/slides';
     let current = 0;
     let timer: ReturnType<typeof setInterval> | undefined;
     const total = slides.length;
+    if (total <= 1) return;
 
     function goTo(index: number) {
       const next = ((index % total) + total) % total;
@@ -81,17 +103,15 @@ import { slides } from '../data/slides';
       if (timer) clearInterval(timer);
     }
 
-    indicators.forEach((ind) => {
+    indicators.forEach((ind, i) => {
       ind.addEventListener('click', () => {
-        const idx = parseInt(ind.getAttribute('data-indicator') || '0', 10);
-        goTo(idx);
+        goTo(i);
         startAutoplay();
       });
     });
 
     hero.addEventListener('mouseenter', stopAutoplay);
     hero.addEventListener('mouseleave', startAutoplay);
-
     startAutoplay();
   }
 

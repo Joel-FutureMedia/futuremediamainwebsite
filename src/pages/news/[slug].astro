@@ -1,15 +1,48 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getApprovedNewsById, mediaUrl, formatDate } from '../../lib/api';
 import { newsArticles } from '../../data/news';
 
-export function getStaticPaths() {
-  return newsArticles.map((article) => ({
-    params: { slug: article.slug },
-    props: { article },
-  }));
+export const prerender = false;
+
+const { slug } = Astro.params;
+const isNumeric = slug && /^\d+$/.test(slug);
+
+let article: {
+  title: string;
+  excerpt: string;
+  date: string;
+  image: string;
+  content: string;
+} | null = null;
+
+if (isNumeric) {
+  const n = await getApprovedNewsById(slug!);
+  if (n) {
+    article = {
+      title: n.title,
+      excerpt: n.description,
+      date: formatDate(n.createdDate),
+      image: mediaUrl(n.mediaPath),
+      content: `<p>${String(n.description || '').replace(/\n/g, '</p><p>')}</p>`,
+    };
+  }
+} else {
+  const found = newsArticles.find((a) => a.slug === slug);
+  if (found) {
+    article = {
+      title: found.title,
+      excerpt: found.excerpt,
+      date: found.date,
+      image: found.image,
+      content: found.content,
+    };
+  }
 }
 
-const { article } = Astro.props;
+if (!article) {
+  return Astro.redirect('/');
+}
 ---
 
 <BaseLayout title={article.title} description={article.excerpt}>

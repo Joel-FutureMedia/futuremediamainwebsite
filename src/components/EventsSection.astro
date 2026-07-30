@@ -1,5 +1,25 @@
 ---
-import { events } from '../data/events';
+import { getEvents, mediaUrl, formatDate, excerpt } from '../lib/api';
+import { events as fallback } from '../data/events';
+
+export const prerender = false;
+
+const apiEvents = await getEvents();
+const events = apiEvents.length
+  ? apiEvents.slice(0, 3).map((e: any) => ({
+      title: e.title,
+      excerpt: excerpt(e.description),
+      date: formatDate(e.createdDate),
+      image: mediaUrl(e.mediaPath),
+      href: `/events/${e.id}`,
+    }))
+  : fallback.map((e) => ({
+      title: e.title,
+      excerpt: e.excerpt,
+      date: e.date,
+      image: e.image,
+      href: `/events/${e.slug}`,
+    }));
 ---
 
 <section class="section section--light">
@@ -15,7 +35,7 @@ import { events } from '../data/events';
             <span class="card__date">{event.date}</span>
             <h3 class="card__title">{event.title}</h3>
             <p class="card__excerpt">{event.excerpt}</p>
-            <a href={`/events/${event.slug}`} class="card__link">Read more</a>
+            <a href={event.href} class="card__link">Read more</a>
           </div>
         </article>
       ))}

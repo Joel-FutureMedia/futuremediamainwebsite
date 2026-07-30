@@ -25,6 +25,9 @@ const { title, description = 'Future Media — Namibia\'s most connected media p
     <title>{title} | Future Media</title>
   </head>
   <body>
+    <script is:inline define:vars={{ apiBase: import.meta.env.PUBLIC_API_URL || 'http://localhost:8080' }}>
+      window.__API_BASE__ = apiBase;
+    </script>
     <Header />
     <main>
       <slot />
