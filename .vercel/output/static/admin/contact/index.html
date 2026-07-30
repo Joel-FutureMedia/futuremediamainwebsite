@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact Us | Future Media Admin</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"><link rel="icon" type="image/png" href="/assets/logo.png"><script>(function(){const apiBase = "https://futurem.simplyfound.com.na";
+
+      window.__API_BASE__ = apiBase;
+    })();</script><script src="/admin/fm-admin.js"></script><link rel="stylesheet" href="/_astro/admin.DF6XE_WY.css"></head><body class="admin-body"><div class="admin-shell"><aside class="admin-sidebar"><div class="admin-sidebar__brand"><img src="/assets/logo.png" alt="Future Media"><span>Admin Panel</span></div><nav class="admin-nav"><a href="/admin/dashboard" class>Dashboard</a><a href="/admin/users" class>Users</a><a href="/admin/news" class>News</a><a href="/admin/events" class>Events</a><a href="/admin/gallery" class>Gallery</a><a href="/admin/vacancies" class>Vacancies</a><a href="/admin/applications" class>Applications</a><a href="/admin/contact" class="active">Contact Us</a><a href="/admin/subscriptions" class>Subscriptions</a><a href="/admin/banners" class>Banners</a></nav><div class="admin-sidebar__footer"><a href="/" style="color:rgba(255,255,255,0.7);text-decoration:none;">← View website</a></div></aside><div class="admin-main"><header class="admin-topbar"><h1>Contact Us</h1><div class="admin-user"><span id="admin-user-label">Loading…</span><button type="button" class="btn btn-ghost btn-sm" id="admin-logout">Logout</button></div></header><div class="admin-content"><div class="admin-card"><div class="admin-card__header"><h2>Incoming contact messages</h2></div><div id="alert"></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Subject</th><th>Message</th><th>Date</th><th>Emailed</th><th>Actions</th></tr></thead><tbody id="tbody"></tbody></table></div></div><script>
+    (async function () {
+      const A = window.FMAdmin;
+      if (!A.requireAuth()) return;
+      const tbody = document.getElementById('tbody');
+      const alertBox = document.getElementById('alert');
+      const show = (m, ok) => alertBox.innerHTML = `<div class="alert ${ok?'alert-success':'alert-error'}">${A.esc(m)}</div>`;
+
+      async function load() {
+        const rows = (await A.api('/api/contact')).data || [];
+        tbody.innerHTML = rows.map((c) => `
+          <tr>
+            <td>${A.esc(c.fullName)}</td>
+            <td><a href="mailto:${A.esc(c.email)}">${A.esc(c.email)}</a></td>
+            <td>${A.esc(c.phone || '—')}</td>
+            <td>${A.esc(c.subject)}</td>
+            <td style="max-width:280px;white-space:pre-wrap;">${A.esc(c.message)}</td>
+            <td>${A.formatDate(c.submittedDate)}</td>
+            <td>${c.emailSent ? 'Yes' : 'No'}</td>
+            <td><button class="btn btn-danger btn-sm" data-del="${c.id}">Delete</button></td>
+          </tr>`).join('') || '<tr><td colspan="8">No messages yet</td></tr>';
+      }
+
+      tbody.addEventListener('click', async (e) => {
+        if (e.target.dataset.del) {
+          if (!confirm('Delete this message?')) return;
+          try {
+            await A.api(`/api/contact/${e.target.dataset.del}`, { method:'DELETE' });
+            show('Deleted', true); load();
+          } catch (ex) { show(ex.message,false); }
+        }
+      });
+
+      await load();
+    })();
+  </script></div></div></div><script>
+      (function () {
+        if (!window.FMAdmin.requireAuth()) return;
+        const user = window.FMAdmin.getUser();
+        const label = document.getElementById('admin-user-label');
+        if (label && user) label.textContent = user.fullName + ' · ' + user.role;
+        document.getElementById('admin-logout')?.addEventListener('click', () => window.FMAdmin.logout());
+      })();
+    </script></body></html>

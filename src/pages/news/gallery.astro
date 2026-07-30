@@ -2,9 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getGallery, mediaUrl } from '../../lib/api';
 
-export const prerender = false;
+export const prerender = true;
 
-const apiGallery = await getGallery();
+let apiGallery: any[] = [];
+try {
+  apiGallery = await getGallery();
+} catch (e) {
+  console.error('Gallery API fallback:', e);
+}
+
 const galleryImages = apiGallery.length
   ? apiGallery.map((g: any) => ({
       src: mediaUrl(g.imagePath),

@@ -3,24 +3,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEvents, mediaUrl, formatDate, excerpt } from '../lib/api';
 import { events as fallback } from '../data/events';
 
-export const prerender = false;
+export const prerender = true;
 
-const apiEvents = await getEvents();
-const events = apiEvents.length
-  ? apiEvents.map((e: any) => ({
+let events = fallback.map((e) => ({
+  title: e.title,
+  excerpt: e.excerpt,
+  date: e.date,
+  image: e.image,
+  href: `/events/${e.slug}`,
+}));
+
+try {
+  const apiEvents = await getEvents();
+  if (apiEvents.length) {
+    events = apiEvents.map((e: any) => ({
       title: e.title,
       excerpt: excerpt(e.description),
       date: formatDate(e.createdDate),
       image: mediaUrl(e.mediaPath),
       href: `/events/${e.id}`,
-    }))
-  : fallback.map((e) => ({
-      title: e.title,
-      excerpt: e.excerpt,
-      date: e.date,
-      image: e.image,
-      href: `/events/${e.slug}`,
     }));
+  }
+} catch (e) {
+  console.error('Events page API fallback:', e);
+}
 ---
 
 <BaseLayout title="Events" description="Upcoming events from Future Media.">

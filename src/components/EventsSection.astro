@@ -2,24 +2,28 @@
 import { getEvents, mediaUrl, formatDate, excerpt } from '../lib/api';
 import { events as fallback } from '../data/events';
 
-export const prerender = false;
+let events = fallback.map((e) => ({
+  title: e.title,
+  excerpt: e.excerpt,
+  date: e.date,
+  image: e.image,
+  href: `/events/${e.slug}`,
+}));
 
-const apiEvents = await getEvents();
-const events = apiEvents.length
-  ? apiEvents.slice(0, 3).map((e: any) => ({
+try {
+  const apiEvents = await getEvents();
+  if (apiEvents.length) {
+    events = apiEvents.slice(0, 3).map((e: any) => ({
       title: e.title,
       excerpt: excerpt(e.description),
       date: formatDate(e.createdDate),
       image: mediaUrl(e.mediaPath),
       href: `/events/${e.id}`,
-    }))
-  : fallback.map((e) => ({
-      title: e.title,
-      excerpt: e.excerpt,
-      date: e.date,
-      image: e.image,
-      href: `/events/${e.slug}`,
     }));
+  }
+} catch (e) {
+  console.error('EventsSection API fallback:', e);
+}
 ---
 
 <section class="section section--light">

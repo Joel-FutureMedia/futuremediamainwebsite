@@ -6,7 +6,6 @@ import { events } from '../../data/events';
 export const prerender = false;
 
 const { slug } = Astro.params;
-const isNumeric = slug && /^\d+$/.test(slug);
 
 let event: {
   title: string;
@@ -17,29 +16,34 @@ let event: {
   content: string;
 } | null = null;
 
-if (isNumeric) {
-  const e = await getEventById(slug!);
-  if (e) {
-    event = {
-      title: e.title,
-      excerpt: e.description,
-      date: formatDate(e.createdDate),
-      image: mediaUrl(e.mediaPath),
-      content: `<p>${String(e.description || '').replace(/\n/g, '</p><p>')}</p>`,
-    };
+try {
+  const isNumeric = slug && /^\d+$/.test(slug);
+  if (isNumeric) {
+    const e = await getEventById(slug!);
+    if (e) {
+      event = {
+        title: e.title,
+        excerpt: e.description,
+        date: formatDate(e.createdDate),
+        image: mediaUrl(e.mediaPath),
+        content: `<p>${String(e.description || '').replace(/\n/g, '</p><p>')}</p>`,
+      };
+    }
+  } else {
+    const found = events.find((a) => a.slug === slug);
+    if (found) {
+      event = {
+        title: found.title,
+        excerpt: found.excerpt,
+        date: found.date,
+        location: found.location,
+        image: found.image,
+        content: found.content,
+      };
+    }
   }
-} else {
-  const found = events.find((a) => a.slug === slug);
-  if (found) {
-    event = {
-      title: found.title,
-      excerpt: found.excerpt,
-      date: found.date,
-      location: found.location,
-      image: found.image,
-      content: found.content,
-    };
-  }
+} catch (err) {
+  console.error('Event detail error:', err);
 }
 
 if (!event) {

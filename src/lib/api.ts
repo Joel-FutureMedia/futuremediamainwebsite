@@ -1,6 +1,8 @@
-const API_BASE = import.meta.env.PUBLIC_API_URL || 'https://futurem.simplyfound.com.na';
+const API_BASE = (import.meta.env.PUBLIC_API_URL || 'https://futurem.simplyfound.com.na').replace(/\/$/, '');
 
 export { API_BASE };
+
+const FETCH_TIMEOUT_MS = 4000;
 
 export function mediaUrl(path?: string | null): string {
   if (!path) return '';
@@ -31,6 +33,10 @@ export function excerpt(text?: string | null, max = 160): string {
   return plain.slice(0, max).trimEnd() + '…';
 }
 
+function asArray<T>(value: unknown): T[] {
+  return Array.isArray(value) ? value : [];
+}
+
 type ApiEnvelope<T> = {
   success: boolean;
   message?: string;
@@ -38,24 +44,32 @@ type ApiEnvelope<T> = {
 };
 
 async function request<T>(path: string, init?: RequestInit): Promise<T | null> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
   try {
     const res = await fetch(`${API_BASE}${path}`, {
       ...init,
+      signal: controller.signal,
       headers: {
+        Accept: 'application/json',
         ...(init?.headers || {}),
       },
     });
     if (!res.ok) return null;
     const json = (await res.json()) as ApiEnvelope<T>;
-    if (!json.success) return null;
-    return json.data;
-  } catch {
+    if (!json || json.success === false) return null;
+    return json.data ?? null;
+  } catch (err) {
+    console.error(`[api] ${path} failed:`, err instanceof Error ? err.message : err);
     return null;
+  } finally {
+    clearTimeout(timer);
   }
 }
 
 export async function getApprovedNews() {
-  return (await request<any[]>('/api/news/public')) || [];
+  return asArray<any>(await request<any[]>('/api/news/public'));
 }
 
 export async function getApprovedNewsById(id: string | number) {
@@ -63,7 +77,7 @@ export async function getApprovedNewsById(id: string | number) {
 }
 
 export async function getEvents() {
-  return (await request<any[]>('/api/events/public')) || [];
+  return asArray<any>(await request<any[]>('/api/events/public'));
 }
 
 export async function getEventById(id: string | number) {
@@ -71,11 +85,11 @@ export async function getEventById(id: string | number) {
 }
 
 export async function getGallery() {
-  return (await request<any[]>('/api/gallery/public')) || [];
+  return asArray<any>(await request<any[]>('/api/gallery/public'));
 }
 
 export async function getVacancies() {
-  return (await request<any[]>('/api/vacancies/public')) || [];
+  return asArray<any>(await request<any[]>('/api/vacancies/public'));
 }
 
 export async function getVacancyById(id: string | number) {
@@ -87,5 +101,5 @@ export async function getLatestBanner() {
 }
 
 export async function getPublicBanners() {
-  return (await request<any[]>('/api/banners/public')) || [];
+  return asArray<any>(await request<any[]>('/api/banners/public'));
 }

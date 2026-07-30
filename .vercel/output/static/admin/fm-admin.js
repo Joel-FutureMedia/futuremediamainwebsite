@@ -1,5 +1,5 @@
 window.FMAdmin = (function () {
-  const API = window.__API_BASE__ || 'http://localhost:8080';
+  const API = window.__API_BASE__ || 'https://futurem.simplyfound.com.na';
   const TOKEN_KEY = 'fm_admin_token';
   const USER_KEY = 'fm_admin_user';
 

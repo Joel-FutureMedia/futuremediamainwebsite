@@ -2,9 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getVacancies, mediaUrl, formatDate } from '../lib/api';
 
-export const prerender = false;
+export const prerender = true;
 
-const apiVacancies = await getVacancies();
+let apiVacancies: any[] = [];
+try {
+  apiVacancies = await getVacancies();
+} catch (e) {
+  console.error('Vacancies API fallback:', e);
+}
 
 const fallback = [
   {

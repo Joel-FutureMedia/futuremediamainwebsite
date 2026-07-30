@@ -1,43 +1,7 @@
----
-import AdminLayout from '../../layouts/AdminLayout.astro';
-export const prerender = true;
----
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>News | Future Media Admin</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"><link rel="icon" type="image/png" href="/assets/logo.png"><script>(function(){const apiBase = "https://futurem.simplyfound.com.na";
 
-<AdminLayout title="News" active="news">
-  <div class="admin-card">
-    <div class="admin-card__header">
-      <h2>Latest news</h2>
-      <button type="button" class="btn btn-primary" id="btn-add-news">Post news</button>
-    </div>
-    <div id="news-alert"></div>
-    <div class="table-wrap">
-      <table class="admin-table">
-        <thead>
-          <tr><th>Media</th><th>Title</th><th>Status</th><th>Created</th><th>Actions</th></tr>
-        </thead>
-        <tbody id="news-body"></tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="modal" id="news-modal" hidden>
-    <div class="modal__backdrop" data-close></div>
-    <div class="modal__panel">
-      <h3 id="news-modal-title">Post news</h3>
-      <form id="news-form">
-        <input type="hidden" id="news-id" />
-        <div class="form-group full" style="margin-bottom:12px;"><label>Title</label><input id="n-title" required /></div>
-        <div class="form-group full" style="margin-bottom:12px;"><label>Description</label><textarea id="n-desc" required></textarea></div>
-        <div class="form-group full" style="margin-bottom:12px;"><label>Image or Video</label><input type="file" id="n-media" accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime,video/x-msvideo,.jpg,.jpeg,.png,.webp,.mp4,.mov,.avi" /></div>
-        <div class="actions">
-          <button type="button" class="btn btn-ghost" data-close>Cancel</button>
-          <button type="submit" class="btn btn-primary">Save</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script is:inline>
+      window.__API_BASE__ = apiBase;
+    })();</script><script src="/admin/fm-admin.js"></script><link rel="stylesheet" href="/_astro/admin.DF6XE_WY.css"></head><body class="admin-body"><div class="admin-shell"><aside class="admin-sidebar"><div class="admin-sidebar__brand"><img src="/assets/logo.png" alt="Future Media"><span>Admin Panel</span></div><nav class="admin-nav"><a href="/admin/dashboard" class>Dashboard</a><a href="/admin/users" class>Users</a><a href="/admin/news" class="active">News</a><a href="/admin/events" class>Events</a><a href="/admin/gallery" class>Gallery</a><a href="/admin/vacancies" class>Vacancies</a><a href="/admin/applications" class>Applications</a><a href="/admin/contact" class>Contact Us</a><a href="/admin/subscriptions" class>Subscriptions</a><a href="/admin/banners" class>Banners</a></nav><div class="admin-sidebar__footer"><a href="/" style="color:rgba(255,255,255,0.7);text-decoration:none;">← View website</a></div></aside><div class="admin-main"><header class="admin-topbar"><h1>News</h1><div class="admin-user"><span id="admin-user-label">Loading…</span><button type="button" class="btn btn-ghost btn-sm" id="admin-logout">Logout</button></div></header><div class="admin-content"><div class="admin-card"><div class="admin-card__header"><h2>Latest news</h2><button type="button" class="btn btn-primary" id="btn-add-news">Post news</button></div><div id="news-alert"></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Media</th><th>Title</th><th>Status</th><th>Created</th><th>Actions</th></tr></thead><tbody id="news-body"></tbody></table></div></div><div class="modal" id="news-modal" hidden><div class="modal__backdrop" data-close></div><div class="modal__panel"><h3 id="news-modal-title">Post news</h3><form id="news-form"><input type="hidden" id="news-id"><div class="form-group full" style="margin-bottom:12px;"><label>Title</label><input id="n-title" required></div><div class="form-group full" style="margin-bottom:12px;"><label>Description</label><textarea id="n-desc" required></textarea></div><div class="form-group full" style="margin-bottom:12px;"><label>Image or Video</label><input type="file" id="n-media" accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime,video/x-msvideo,.jpg,.jpeg,.png,.webp,.mp4,.mov,.avi"></div><div class="actions"><button type="button" class="btn btn-ghost" data-close>Cancel</button><button type="submit" class="btn btn-primary">Save</button></div></form></div></div><script>
     (async function () {
       const A = window.FMAdmin;
       if (!A.requireAuth()) return;
@@ -134,5 +98,12 @@ export const prerender = true;
 
       await load();
     })();
-  </script>
-</AdminLayout>
+  </script></div></div></div><script>
+      (function () {
+        if (!window.FMAdmin.requireAuth()) return;
+        const user = window.FMAdmin.getUser();
+        const label = document.getElementById('admin-user-label');
+        if (label && user) label.textContent = user.fullName + ' · ' + user.role;
+        document.getElementById('admin-logout')?.addEventListener('click', () => window.FMAdmin.logout());
+      })();
+    </script></body></html>

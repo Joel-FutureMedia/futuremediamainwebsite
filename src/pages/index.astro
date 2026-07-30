@@ -8,7 +8,8 @@ import NewsSection from '../components/NewsSection.astro';
 import EventsSection from '../components/EventsSection.astro';
 import BrandStrip from '../components/BrandStrip.astro';
 
-export const prerender = false;
+// Static on Vercel CDN — avoids serverless crashes when the API is slow/unreachable
+export const prerender = true;
 ---
 
 <BaseLayout title="Home" description="Future Media — Namibia's most connected media partner. Get a free media audit or explore our solutions.">

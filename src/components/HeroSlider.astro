@@ -2,16 +2,16 @@
 import { getPublicBanners, getLatestBanner, mediaUrl } from '../lib/api';
 import { slides as fallbackSlides } from '../data/slides';
 
-export const prerender = false;
+let slides = fallbackSlides;
 
-const banners = await getPublicBanners();
-const latest = banners.length ? null : await getLatestBanner();
+try {
+  const banners = await getPublicBanners();
+  const latest = banners.length ? null : await getLatestBanner();
+  const activeBanners = (banners.length ? banners : latest ? [latest] : [])
+    .filter((b: any) => b && b.active !== false);
 
-const activeBanners = (banners.length ? banners : latest ? [latest] : [])
-  .filter((b: any) => b && (b.active !== false));
-
-const slides = activeBanners.length
-  ? activeBanners.map((b: any) => ({
+  if (activeBanners.length) {
+    slides = activeBanners.map((b: any) => ({
       heading: b.title,
       subheading: b.description,
       cta: 'Get a free media audit',
@@ -19,8 +19,11 @@ const slides = activeBanners.length
       secondaryCta: 'Explore our solutions',
       secondaryCtaLink: '/advertise/solutions',
       image: mediaUrl(b.imagePath),
-    }))
-  : fallbackSlides;
+    }));
+  }
+} catch (e) {
+  console.error('HeroSlider API fallback:', e);
+}
 ---
 
 <section class="hero" id="hero-slider" aria-roledescription="carousel">
@@ -80,15 +83,12 @@ const slides = activeBanners.length
       const next = ((index % total) + total) % total;
       if (next === current) return;
       current = next;
-
       track.style.transform = `translate3d(-${current * 100}%, 0, 0)`;
-
       slides.forEach((slide, i) => {
         const active = i === current;
         slide.setAttribute('aria-hidden', active ? 'false' : 'true');
         slide.classList.toggle('is-active', active);
       });
-
       indicators.forEach((ind, i) => {
         ind.classList.toggle('active', i === current);
       });

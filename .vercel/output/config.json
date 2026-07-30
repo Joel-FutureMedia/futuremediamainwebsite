@@ -44,50 +44,6 @@
 			"dest": "_render"
 		},
 		{
-			"src": "^/admin/applications/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/admin/banners/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/admin/contact/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/admin/dashboard/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/admin/events/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/admin/gallery/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/admin/news/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/admin/subscriptions/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/admin/users/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/admin/vacancies/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/admin/?$",
-			"dest": "_render"
-		},
-		{
 			"src": "^/advertise/advertising-packages/?$",
 			"dest": "_render"
 		},
@@ -120,19 +76,7 @@
 			"dest": "_render"
 		},
 		{
-			"src": "^/events/?$",
-			"dest": "_render"
-		},
-		{
 			"src": "^/live-chat/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/news/events/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/news/gallery/?$",
 			"dest": "_render"
 		},
 		{
@@ -153,14 +97,6 @@
 		},
 		{
 			"src": "^/special-offers/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/vacancies/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/$",
 			"dest": "_render"
 		},
 		{

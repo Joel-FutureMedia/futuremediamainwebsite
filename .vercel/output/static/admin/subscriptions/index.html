@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Subscriptions | Future Media Admin</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"><link rel="icon" type="image/png" href="/assets/logo.png"><script>(function(){const apiBase = "https://futurem.simplyfound.com.na";
+
+      window.__API_BASE__ = apiBase;
+    })();</script><script src="/admin/fm-admin.js"></script><link rel="stylesheet" href="/_astro/admin.DF6XE_WY.css"></head><body class="admin-body"><div class="admin-shell"><aside class="admin-sidebar"><div class="admin-sidebar__brand"><img src="/assets/logo.png" alt="Future Media"><span>Admin Panel</span></div><nav class="admin-nav"><a href="/admin/dashboard" class>Dashboard</a><a href="/admin/users" class>Users</a><a href="/admin/news" class>News</a><a href="/admin/events" class>Events</a><a href="/admin/gallery" class>Gallery</a><a href="/admin/vacancies" class>Vacancies</a><a href="/admin/applications" class>Applications</a><a href="/admin/contact" class>Contact Us</a><a href="/admin/subscriptions" class="active">Subscriptions</a><a href="/admin/banners" class>Banners</a></nav><div class="admin-sidebar__footer"><a href="/" style="color:rgba(255,255,255,0.7);text-decoration:none;">← View website</a></div></aside><div class="admin-main"><header class="admin-topbar"><h1>Subscriptions</h1><div class="admin-user"><span id="admin-user-label">Loading…</span><button type="button" class="btn btn-ghost btn-sm" id="admin-logout">Logout</button></div></header><div class="admin-content"><div class="admin-card"><div class="admin-card__header"><h2>Newsletter subscribers</h2><button type="button" class="btn btn-ghost" id="btn-active">Active only</button></div><div id="alert"></div><div class="table-wrap"><table class="admin-table"><thead><tr><th>Name</th><th>Email</th><th>Language</th><th>Active</th><th>Subscribed</th><th>Actions</th></tr></thead><tbody id="tbody"></tbody></table></div></div><script>
+    (async function () {
+      const A = window.FMAdmin;
+      if (!A.requireAuth()) return;
+      const tbody = document.getElementById('tbody');
+      const alertBox = document.getElementById('alert');
+      let activeOnly = false;
+      const show = (m, ok) => alertBox.innerHTML = `<div class="alert ${ok?'alert-success':'alert-error'}">${A.esc(m)}</div>`;
+
+      async function load() {
+        const path = activeOnly ? '/api/subscriptions/active' : '/api/subscriptions';
+        const rows = (await A.api(path)).data || [];
+        tbody.innerHTML = rows.map((s) => `
+          <tr>
+            <td>${A.esc(s.fullName)}</td>
+            <td>${A.esc(s.email)}</td>
+            <td>${A.esc(s.language)}</td>
+            <td>${s.active ? 'Yes' : 'No'}</td>
+            <td>${A.formatDate(s.subscribedDate)}</td>
+            <td class="actions">
+              ${s.active ? `<button class="btn btn-ghost btn-sm" data-unsub="${s.id}">Unsubscribe</button>` : ''}
+              <button class="btn btn-danger btn-sm" data-del="${s.id}">Delete</button>
+            </td>
+          </tr>`).join('') || '<tr><td colspan="6">No subscribers yet</td></tr>';
+      }
+
+      document.getElementById('btn-active').onclick = () => {
+        activeOnly = !activeOnly;
+        document.getElementById('btn-active').textContent = activeOnly ? 'Show all' : 'Active only';
+        load();
+      };
+
+      tbody.addEventListener('click', async (e) => {
+        const t = e.target;
+        try {
+          if (t.dataset.unsub) {
+            await A.api(`/api/subscriptions/${t.dataset.unsub}/unsubscribe`, { method:'PUT' });
+            show('Unsubscribed', true); load();
+          }
+          if (t.dataset.del) {
+            if (!confirm('Delete subscriber?')) return;
+            await A.api(`/api/subscriptions/${t.dataset.del}`, { method:'DELETE' });
+            show('Deleted', true); load();
+          }
+        } catch (ex) { show(ex.message,false); }
+      });
+
+      await load();
+    })();
+  </script></div></div></div><script>
+      (function () {
+        if (!window.FMAdmin.requireAuth()) return;
+        const user = window.FMAdmin.getUser();
+        const label = document.getElementById('admin-user-label');
+        if (label && user) label.textContent = user.fullName + ' · ' + user.role;
+        document.getElementById('admin-logout')?.addEventListener('click', () => window.FMAdmin.logout());
+      })();
+    </script></body></html>

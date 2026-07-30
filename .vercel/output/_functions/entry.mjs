@@ -19,7 +19,7 @@ var ASTRO_LOCALS_HEADER = "x-astro-locals";
 var ASTRO_MIDDLEWARE_SECRET_HEADER = "x-astro-middleware-secret";
 //#endregion
 //#region \0virtual:astro-vercel:config
-var middlewareSecret = "b299aac0-1928-4c29-bef5-3e9c47640493";
+var middlewareSecret = "b1f89abf-3aec-4a89-9a37-d5d66573016d";
 //#endregion
 //#region node_modules/astro/dist/actions/consts.js
 var ACTION_QUERY_PARAMS = {
@@ -5354,321 +5354,6 @@ var renderers = [];
 		"scripts": [],
 		"styles": [],
 		"routeData": {
-			"route": "/admin/applications",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/admin\\/applications\\/?$",
-			"segments": [[{
-				"content": "admin",
-				"dynamic": false,
-				"spread": false
-			}], [{
-				"content": "applications",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/admin/applications.astro",
-			"pathname": "/admin/applications",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/admin/banners",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/admin\\/banners\\/?$",
-			"segments": [[{
-				"content": "admin",
-				"dynamic": false,
-				"spread": false
-			}], [{
-				"content": "banners",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/admin/banners.astro",
-			"pathname": "/admin/banners",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/admin/contact",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/admin\\/contact\\/?$",
-			"segments": [[{
-				"content": "admin",
-				"dynamic": false,
-				"spread": false
-			}], [{
-				"content": "contact",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/admin/contact.astro",
-			"pathname": "/admin/contact",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/admin/dashboard",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/admin\\/dashboard\\/?$",
-			"segments": [[{
-				"content": "admin",
-				"dynamic": false,
-				"spread": false
-			}], [{
-				"content": "dashboard",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/admin/dashboard.astro",
-			"pathname": "/admin/dashboard",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/admin/events",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/admin\\/events\\/?$",
-			"segments": [[{
-				"content": "admin",
-				"dynamic": false,
-				"spread": false
-			}], [{
-				"content": "events",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/admin/events.astro",
-			"pathname": "/admin/events",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/admin/gallery",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/admin\\/gallery\\/?$",
-			"segments": [[{
-				"content": "admin",
-				"dynamic": false,
-				"spread": false
-			}], [{
-				"content": "gallery",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/admin/gallery.astro",
-			"pathname": "/admin/gallery",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/admin/news",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/admin\\/news\\/?$",
-			"segments": [[{
-				"content": "admin",
-				"dynamic": false,
-				"spread": false
-			}], [{
-				"content": "news",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/admin/news.astro",
-			"pathname": "/admin/news",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/admin/subscriptions",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/admin\\/subscriptions\\/?$",
-			"segments": [[{
-				"content": "admin",
-				"dynamic": false,
-				"spread": false
-			}], [{
-				"content": "subscriptions",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/admin/subscriptions.astro",
-			"pathname": "/admin/subscriptions",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/admin/users",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/admin\\/users\\/?$",
-			"segments": [[{
-				"content": "admin",
-				"dynamic": false,
-				"spread": false
-			}], [{
-				"content": "users",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/admin/users.astro",
-			"pathname": "/admin/users",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/admin/vacancies",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/admin\\/vacancies\\/?$",
-			"segments": [[{
-				"content": "admin",
-				"dynamic": false,
-				"spread": false
-			}], [{
-				"content": "vacancies",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/admin/vacancies.astro",
-			"pathname": "/admin/vacancies",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/admin",
-			"isIndex": true,
-			"type": "page",
-			"pattern": "^\\/admin\\/?$",
-			"segments": [[{
-				"content": "admin",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/admin/index.astro",
-			"pathname": "/admin",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
 			"route": "/advertise/advertising-packages",
 			"isIndex": false,
 			"type": "page",
@@ -5892,31 +5577,6 @@ var renderers = [];
 		"scripts": [],
 		"styles": [],
 		"routeData": {
-			"route": "/events",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/events\\/?$",
-			"segments": [[{
-				"content": "events",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/events.astro",
-			"pathname": "/events",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
 			"route": "/live-chat",
 			"isIndex": false,
 			"type": "page",
@@ -5929,64 +5589,6 @@ var renderers = [];
 			"params": [],
 			"component": "src/pages/live-chat.astro",
 			"pathname": "/live-chat",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/news/events",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/news\\/events\\/?$",
-			"segments": [[{
-				"content": "news",
-				"dynamic": false,
-				"spread": false
-			}], [{
-				"content": "events",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/news/events.astro",
-			"pathname": "/news/events",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/news/gallery",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/news\\/gallery\\/?$",
-			"segments": [[{
-				"content": "news",
-				"dynamic": false,
-				"spread": false
-			}], [{
-				"content": "gallery",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/news/gallery.astro",
-			"pathname": "/news/gallery",
 			"prerender": false,
 			"fallbackRoutes": [],
 			"distURL": [],
@@ -6125,52 +5727,6 @@ var renderers = [];
 			"origin": "project",
 			"_meta": { "trailingSlash": "ignore" }
 		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/vacancies",
-			"isIndex": false,
-			"type": "page",
-			"pattern": "^\\/vacancies\\/?$",
-			"segments": [[{
-				"content": "vacancies",
-				"dynamic": false,
-				"spread": false
-			}]],
-			"params": [],
-			"component": "src/pages/vacancies.astro",
-			"pathname": "/vacancies",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
-	},
-	{
-		"file": "",
-		"links": [],
-		"scripts": [],
-		"styles": [],
-		"routeData": {
-			"route": "/",
-			"isIndex": true,
-			"type": "page",
-			"pattern": "^\\/$",
-			"segments": [],
-			"params": [],
-			"component": "src/pages/index.astro",
-			"pathname": "/",
-			"prerender": false,
-			"fallbackRoutes": [],
-			"distURL": [],
-			"origin": "project",
-			"_meta": { "trailingSlash": "ignore" }
-		}
 	}
 ].map(deserializeRouteInfo);
 //#endregion
@@ -6182,36 +5738,20 @@ var _page3 = () => import("./chunks/history_BhKVzG0_.mjs");
 var _page4 = () => import("./chunks/team_C1kU6C32.mjs");
 var _page5 = () => import("./chunks/values_D440JCrD.mjs");
 var _page6 = () => import("./chunks/vision-mission_D2AN7ab_.mjs");
-var _page7 = () => import("./chunks/applications_BsrQua9u.mjs");
-var _page8 = () => import("./chunks/banners_DV4Zbjgz.mjs");
-var _page9 = () => import("./chunks/contact_CqAS58nt.mjs");
-var _page10 = () => import("./chunks/dashboard_yQX8QCnX.mjs");
-var _page11 = () => import("./chunks/events_Dw0zdaQ4.mjs");
-var _page12 = () => import("./chunks/gallery_eprYb9Qo.mjs");
-var _page13 = () => import("./chunks/news_lp5v8Ucj.mjs");
-var _page14 = () => import("./chunks/subscriptions_MHi0AURa.mjs");
-var _page15 = () => import("./chunks/users_CNgne0bD.mjs");
-var _page16 = () => import("./chunks/vacancies_nwNGCAzK.mjs");
-var _page17 = () => import("./chunks/index_CW-oaqac.mjs");
-var _page18 = () => import("./chunks/advertising-packages_BNtx2S_K.mjs");
-var _page19 = () => import("./chunks/audiences-insights_C7BGueON.mjs");
-var _page20 = () => import("./chunks/latest-offers_B88DIr4r.mjs");
-var _page21 = () => import("./chunks/solutions_BAVPjCNM.mjs");
-var _page22 = () => import("./chunks/terms_iHsn-b49.mjs");
-var _page23 = () => import("./chunks/brands_DfHNuRUe.mjs");
-var _page24 = () => import("./chunks/contact_wQukDMcj.mjs");
-var _page25 = () => import("./chunks/_slug__C7IQfRqj.mjs");
-var _page26 = () => import("./chunks/events_DK2qRrSa.mjs");
-var _page27 = () => import("./chunks/live-chat_DHAKLr3h.mjs");
-var _page28 = () => import("./chunks/events_BHVD0dIN.mjs");
-var _page29 = () => import("./chunks/gallery_B07HFZGi.mjs");
-var _page30 = () => import("./chunks/newsletter_BGJCBJ-x.mjs");
-var _page31 = () => import("./chunks/_slug__Byh77mRl.mjs");
-var _page32 = () => import("./chunks/shop-beat_DcwCu28s.mjs");
-var _page33 = () => import("./chunks/solutions_DS8vWHa0.mjs");
-var _page34 = () => import("./chunks/special-offers_CakgkjQP.mjs");
-var _page35 = () => import("./chunks/vacancies_CP8p5Q2q.mjs");
-var _page36 = () => import("./chunks/index_B6riLsmm.mjs");
+var _page7 = () => import("./chunks/advertising-packages_BNtx2S_K.mjs");
+var _page8 = () => import("./chunks/audiences-insights_C7BGueON.mjs");
+var _page9 = () => import("./chunks/latest-offers_B88DIr4r.mjs");
+var _page10 = () => import("./chunks/solutions_BAVPjCNM.mjs");
+var _page11 = () => import("./chunks/terms_iHsn-b49.mjs");
+var _page12 = () => import("./chunks/brands_DfHNuRUe.mjs");
+var _page13 = () => import("./chunks/contact_wQukDMcj.mjs");
+var _page14 = () => import("./chunks/_slug__gdkCTKDb.mjs");
+var _page15 = () => import("./chunks/live-chat_DHAKLr3h.mjs");
+var _page16 = () => import("./chunks/newsletter_BGJCBJ-x.mjs");
+var _page17 = () => import("./chunks/_slug__D-4xEDCv.mjs");
+var _page18 = () => import("./chunks/shop-beat_DcwCu28s.mjs");
+var _page19 = () => import("./chunks/solutions_DS8vWHa0.mjs");
+var _page20 = () => import("./chunks/special-offers_CakgkjQP.mjs");
 var pageMap = /* @__PURE__ */ new Map([
 	["node_modules/astro/dist/assets/endpoint/generic.js", _page0],
 	["src/pages/about/company-overview.astro", _page1],
@@ -6220,40 +5760,24 @@ var pageMap = /* @__PURE__ */ new Map([
 	["src/pages/about/team.astro", _page4],
 	["src/pages/about/values.astro", _page5],
 	["src/pages/about/vision-mission.astro", _page6],
-	["src/pages/admin/applications.astro", _page7],
-	["src/pages/admin/banners.astro", _page8],
-	["src/pages/admin/contact.astro", _page9],
-	["src/pages/admin/dashboard.astro", _page10],
-	["src/pages/admin/events.astro", _page11],
-	["src/pages/admin/gallery.astro", _page12],
-	["src/pages/admin/news.astro", _page13],
-	["src/pages/admin/subscriptions.astro", _page14],
-	["src/pages/admin/users.astro", _page15],
-	["src/pages/admin/vacancies.astro", _page16],
-	["src/pages/admin/index.astro", _page17],
-	["src/pages/advertise/advertising-packages.astro", _page18],
-	["src/pages/advertise/audiences-insights.astro", _page19],
-	["src/pages/advertise/latest-offers.astro", _page20],
-	["src/pages/advertise/solutions.astro", _page21],
-	["src/pages/advertise/terms.astro", _page22],
-	["src/pages/brands.astro", _page23],
-	["src/pages/contact.astro", _page24],
-	["src/pages/events/[slug].astro", _page25],
-	["src/pages/events.astro", _page26],
-	["src/pages/live-chat.astro", _page27],
-	["src/pages/news/events.astro", _page28],
-	["src/pages/news/gallery.astro", _page29],
-	["src/pages/news/newsletter.astro", _page30],
-	["src/pages/news/[slug].astro", _page31],
-	["src/pages/shop-beat.astro", _page32],
-	["src/pages/solutions.astro", _page33],
-	["src/pages/special-offers.astro", _page34],
-	["src/pages/vacancies.astro", _page35],
-	["src/pages/index.astro", _page36]
+	["src/pages/advertise/advertising-packages.astro", _page7],
+	["src/pages/advertise/audiences-insights.astro", _page8],
+	["src/pages/advertise/latest-offers.astro", _page9],
+	["src/pages/advertise/solutions.astro", _page10],
+	["src/pages/advertise/terms.astro", _page11],
+	["src/pages/brands.astro", _page12],
+	["src/pages/contact.astro", _page13],
+	["src/pages/events/[slug].astro", _page14],
+	["src/pages/live-chat.astro", _page15],
+	["src/pages/news/newsletter.astro", _page16],
+	["src/pages/news/[slug].astro", _page17],
+	["src/pages/shop-beat.astro", _page18],
+	["src/pages/solutions.astro", _page19],
+	["src/pages/special-offers.astro", _page20]
 ]);
 //#endregion
 //#region \0virtual:astro:manifest
-var _manifest = deserializeManifest({"rootDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/","cacheDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/node_modules/.astro/","outDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/dist/","srcDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/src/","publicDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/public/","buildClientDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/dist/client/","buildServerDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/dist/server/","adapterName":"@astrojs/vercel","assetsDir":"_astro","routes":[{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"type":"page","component":"_server-islands.astro","params":["name"],"segments":[[{"content":"_server-islands","dynamic":false,"spread":false}],[{"content":"name","dynamic":true,"spread":false}]],"pattern":"^\\/_server-islands\\/([^/]+?)\\/?$","prerender":false,"isIndex":false,"fallbackRoutes":[],"route":"/_server-islands/[name]","origin":"internal","distURL":[],"_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/_image","component":"node_modules/astro/dist/assets/endpoint/generic.js","params":[],"pathname":"/_image","pattern":"^\\/_image\\/?$","segments":[[{"content":"_image","dynamic":false,"spread":false}]],"type":"endpoint","prerender":false,"fallbackRoutes":[],"distURL":[],"isIndex":false,"origin":"internal","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/about/company-overview","isIndex":false,"type":"page","pattern":"^\\/about\\/company-overview\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}],[{"content":"company-overview","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about/company-overview.astro","pathname":"/about/company-overview","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/about/company-profile","isIndex":false,"type":"page","pattern":"^\\/about\\/company-profile\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}],[{"content":"company-profile","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about/company-profile.astro","pathname":"/about/company-profile","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/about/history","isIndex":false,"type":"page","pattern":"^\\/about\\/history\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}],[{"content":"history","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about/history.astro","pathname":"/about/history","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/about/team","isIndex":false,"type":"page","pattern":"^\\/about\\/team\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}],[{"content":"team","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about/team.astro","pathname":"/about/team","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/about/values","isIndex":false,"type":"page","pattern":"^\\/about\\/values\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}],[{"content":"values","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about/values.astro","pathname":"/about/values","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/about/vision-mission","isIndex":false,"type":"page","pattern":"^\\/about\\/vision-mission\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}],[{"content":"vision-mission","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about/vision-mission.astro","pathname":"/about/vision-mission","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/admin.DF6XE_WY.css"}],"routeData":{"route":"/admin/applications","isIndex":false,"type":"page","pattern":"^\\/admin\\/applications\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"applications","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/applications.astro","pathname":"/admin/applications","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/admin.DF6XE_WY.css"}],"routeData":{"route":"/admin/banners","isIndex":false,"type":"page","pattern":"^\\/admin\\/banners\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"banners","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/banners.astro","pathname":"/admin/banners","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/admin.DF6XE_WY.css"}],"routeData":{"route":"/admin/contact","isIndex":false,"type":"page","pattern":"^\\/admin\\/contact\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"contact","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/contact.astro","pathname":"/admin/contact","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/admin.DF6XE_WY.css"}],"routeData":{"route":"/admin/dashboard","isIndex":false,"type":"page","pattern":"^\\/admin\\/dashboard\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"dashboard","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/dashboard.astro","pathname":"/admin/dashboard","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/admin.DF6XE_WY.css"}],"routeData":{"route":"/admin/events","isIndex":false,"type":"page","pattern":"^\\/admin\\/events\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"events","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/events.astro","pathname":"/admin/events","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/admin.DF6XE_WY.css"}],"routeData":{"route":"/admin/gallery","isIndex":false,"type":"page","pattern":"^\\/admin\\/gallery\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"gallery","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/gallery.astro","pathname":"/admin/gallery","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/admin.DF6XE_WY.css"}],"routeData":{"route":"/admin/news","isIndex":false,"type":"page","pattern":"^\\/admin\\/news\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"news","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/news.astro","pathname":"/admin/news","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/admin.DF6XE_WY.css"}],"routeData":{"route":"/admin/subscriptions","isIndex":false,"type":"page","pattern":"^\\/admin\\/subscriptions\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"subscriptions","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/subscriptions.astro","pathname":"/admin/subscriptions","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/admin.DF6XE_WY.css"}],"routeData":{"route":"/admin/users","isIndex":false,"type":"page","pattern":"^\\/admin\\/users\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"users","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/users.astro","pathname":"/admin/users","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/admin.DF6XE_WY.css"}],"routeData":{"route":"/admin/vacancies","isIndex":false,"type":"page","pattern":"^\\/admin\\/vacancies\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"vacancies","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/vacancies.astro","pathname":"/admin/vacancies","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/admin.DF6XE_WY.css"}],"routeData":{"route":"/admin","isIndex":true,"type":"page","pattern":"^\\/admin\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/index.astro","pathname":"/admin","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"inline","content":".pkg-filters[data-astro-cid-foautpwm]{flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:32px;display:flex}.pkg-filter[data-astro-cid-foautpwm]{color:#313e4a;background:#fff;border:1px solid #e2e5e8;border-radius:20px;padding:8px 16px;font-size:13px;font-weight:600}.pkg-filter[data-astro-cid-foautpwm].is-active{color:#fff;background:#313e4a;border-color:#313e4a}\n"},{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/advertise/advertising-packages","isIndex":false,"type":"page","pattern":"^\\/advertise\\/advertising-packages\\/?$","segments":[[{"content":"advertise","dynamic":false,"spread":false}],[{"content":"advertising-packages","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/advertise/advertising-packages.astro","pathname":"/advertise/advertising-packages","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/advertise/audiences-insights","isIndex":false,"type":"page","pattern":"^\\/advertise\\/audiences-insights\\/?$","segments":[[{"content":"advertise","dynamic":false,"spread":false}],[{"content":"audiences-insights","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/advertise/audiences-insights.astro","pathname":"/advertise/audiences-insights","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/advertise/latest-offers","isIndex":false,"type":"page","pattern":"^\\/advertise\\/latest-offers\\/?$","segments":[[{"content":"advertise","dynamic":false,"spread":false}],[{"content":"latest-offers","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/advertise/latest-offers.astro","pathname":"/advertise/latest-offers","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"inline","content":".proof-stats[data-astro-cid-mtbpkoiy]{grid-template-columns:repeat(4,1fr);gap:16px;max-width:800px;margin:32px auto 0;display:grid}.proof-stats[data-astro-cid-mtbpkoiy] div[data-astro-cid-mtbpkoiy]{text-align:center}.proof-stats[data-astro-cid-mtbpkoiy] strong[data-astro-cid-mtbpkoiy]{color:#e3564e;font-size:28px;font-weight:700;display:block}.proof-stats[data-astro-cid-mtbpkoiy] span[data-astro-cid-mtbpkoiy]{color:#ffffffb3;font-size:12px}.accordion__item[data-astro-cid-mtbpkoiy]{background:#fff;border:1px solid #e2e5e8;border-radius:8px;margin-bottom:12px;overflow:hidden}.accordion__trigger[data-astro-cid-mtbpkoiy]{color:#313e4a;text-align:left;justify-content:space-between;align-items:center;width:100%;padding:18px 20px;font-size:16px;font-weight:700;display:flex}.accordion__arrow[data-astro-cid-mtbpkoiy]{color:#e3564e;transition:transform .25s}.accordion__item[data-astro-cid-mtbpkoiy].is-open .accordion__arrow[data-astro-cid-mtbpkoiy]{transform:rotate(180deg)}.accordion__panel[data-astro-cid-mtbpkoiy]{padding:0 20px 20px;display:none}.accordion__item[data-astro-cid-mtbpkoiy].is-open .accordion__panel[data-astro-cid-mtbpkoiy]{display:block}.accordion__cards[data-astro-cid-mtbpkoiy]{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;display:grid}.accordion__card[data-astro-cid-mtbpkoiy]{background:#f4f5f6;border-radius:6px;padding:16px}.accordion__card[data-astro-cid-mtbpkoiy] h3[data-astro-cid-mtbpkoiy]{color:#313e4a;margin-bottom:6px;font-size:15px}.accordion__card[data-astro-cid-mtbpkoiy] p[data-astro-cid-mtbpkoiy]{color:#5a6570;margin-bottom:10px;font-size:13px}.accordion__card[data-astro-cid-mtbpkoiy] a[data-astro-cid-mtbpkoiy]{color:#e3564e;font-size:13px;font-weight:600}@media (width<=700px){.proof-stats[data-astro-cid-mtbpkoiy]{grid-template-columns:1fr 1fr}}\n"},{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/advertise/solutions","isIndex":false,"type":"page","pattern":"^\\/advertise\\/solutions\\/?$","segments":[[{"content":"advertise","dynamic":false,"spread":false}],[{"content":"solutions","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/advertise/solutions.astro","pathname":"/advertise/solutions","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/advertise/terms","isIndex":false,"type":"page","pattern":"^\\/advertise\\/terms\\/?$","segments":[[{"content":"advertise","dynamic":false,"spread":false}],[{"content":"terms","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/advertise/terms.astro","pathname":"/advertise/terms","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/brands","isIndex":false,"type":"page","pattern":"^\\/brands\\/?$","segments":[[{"content":"brands","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/brands.astro","pathname":"/brands","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"inline","content":".audit-progress[data-astro-cid-6bfsojfh]{color:#e3564e;margin-bottom:16px;font-size:13px;font-weight:600}.option-tiles[data-astro-cid-6bfsojfh]{flex-wrap:wrap;gap:8px;display:flex}.option-tile[data-astro-cid-6bfsojfh]{color:#313e4a;cursor:pointer;background:#fff;border:1px solid #e2e5e8;border-radius:20px;padding:8px 14px;font-size:13px}.option-tile[data-astro-cid-6bfsojfh].is-selected{color:#e3564e;background:#e3564e14;border-color:#e3564e;font-weight:600}\n"},{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/contact","isIndex":false,"type":"page","pattern":"^\\/contact\\/?$","segments":[[{"content":"contact","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/contact.astro","pathname":"/contact","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/events/[slug]","isIndex":false,"type":"page","pattern":"^\\/events\\/([^/]+?)\\/?$","segments":[[{"content":"events","dynamic":false,"spread":false}],[{"content":"slug","dynamic":true,"spread":false}]],"params":["slug"],"component":"src/pages/events/[slug].astro","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/events","isIndex":false,"type":"page","pattern":"^\\/events\\/?$","segments":[[{"content":"events","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/events.astro","pathname":"/events","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/live-chat","isIndex":false,"type":"page","pattern":"^\\/live-chat\\/?$","segments":[[{"content":"live-chat","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/live-chat.astro","pathname":"/live-chat","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/news/events","isIndex":false,"type":"page","pattern":"^\\/news\\/events\\/?$","segments":[[{"content":"news","dynamic":false,"spread":false}],[{"content":"events","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/news/events.astro","pathname":"/news/events","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/news/gallery","isIndex":false,"type":"page","pattern":"^\\/news\\/gallery\\/?$","segments":[[{"content":"news","dynamic":false,"spread":false}],[{"content":"gallery","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/news/gallery.astro","pathname":"/news/gallery","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/news/newsletter","isIndex":false,"type":"page","pattern":"^\\/news\\/newsletter\\/?$","segments":[[{"content":"news","dynamic":false,"spread":false}],[{"content":"newsletter","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/news/newsletter.astro","pathname":"/news/newsletter","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/news/[slug]","isIndex":false,"type":"page","pattern":"^\\/news\\/([^/]+?)\\/?$","segments":[[{"content":"news","dynamic":false,"spread":false}],[{"content":"slug","dynamic":true,"spread":false}]],"params":["slug"],"component":"src/pages/news/[slug].astro","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/shop-beat","isIndex":false,"type":"page","pattern":"^\\/shop-beat\\/?$","segments":[[{"content":"shop-beat","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/shop-beat.astro","pathname":"/shop-beat","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/solutions","isIndex":false,"type":"page","pattern":"^\\/solutions\\/?$","segments":[[{"content":"solutions","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/solutions.astro","pathname":"/solutions","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/special-offers","isIndex":false,"type":"page","pattern":"^\\/special-offers\\/?$","segments":[[{"content":"special-offers","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/special-offers.astro","pathname":"/special-offers","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"inline","content":".apply-modal[data-astro-cid-sgxryyil]{z-index:1000;justify-content:center;align-items:center;padding:24px;display:flex;position:fixed;inset:0}.apply-modal[data-astro-cid-sgxryyil][hidden]{display:none}.apply-modal__backdrop[data-astro-cid-sgxryyil]{background:#313e4a8c;position:absolute;inset:0}.apply-modal__panel[data-astro-cid-sgxryyil]{background:#fff;border-radius:8px;width:100%;max-height:90vh;padding:28px;position:relative;overflow:auto;box-shadow:0 16px 48px #0003}\n"},{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/vacancies","isIndex":false,"type":"page","pattern":"^\\/vacancies\\/?$","segments":[[{"content":"vacancies","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/vacancies.astro","pathname":"/vacancies","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"},{"type":"external","src":"_astro/index.OYiibmjt.css"}],"routeData":{"route":"/","isIndex":true,"type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}}],"serverLike":true,"middlewareMode":"classic","base":"/","trailingSlash":"ignore","compressHTML":"jsx","componentMetadata":[["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/applications.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/banners.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/contact.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/dashboard.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/events.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/gallery.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/news.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/subscriptions.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/users.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/vacancies.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/company-overview.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/company-profile.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/history.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/team.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/values.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/vision-mission.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/advertising-packages.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/audiences-insights.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/latest-offers.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/solutions.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/terms.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/brands.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/contact.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/events.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/events/[slug].astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/index.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/live-chat.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/news/[slug].astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/news/events.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/news/gallery.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/news/newsletter.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/shop-beat.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/solutions.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/special-offers.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/vacancies.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/index.astro",{"propagation":"none","containsHead":true}]],"renderers":[],"clientDirectives":[["idle","(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value==\"object\"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};\"requestIdleCallback\"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event(\"astro:idle\"));})();"],["load","(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event(\"astro:load\"));})();"],["media","(()=>{var n=(a,t)=>{let i=async()=>{await(await a())()};if(t.value){let e=matchMedia(t.value);e.matches?i():e.addEventListener(\"change\",i,{once:!0})}};(self.Astro||(self.Astro={})).media=n;window.dispatchEvent(new Event(\"astro:media\"));})();"],["only","(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event(\"astro:only\"));})();"],["visible","(()=>{var a=(s,i,o)=>{let r=async()=>{await(await s())()},t=typeof i.value==\"object\"?i.value:void 0,c={rootMargin:t==null?void 0:t.rootMargin},n=new IntersectionObserver(e=>{for(let l of e)if(l.isIntersecting){n.disconnect(),r();break}},c);for(let e of o.children)n.observe(e)};(self.Astro||(self.Astro={})).visible=a;window.dispatchEvent(new Event(\"astro:visible\"));})();"]],"entryModules":{"astro/entrypoints/prerender":"prerender-entry.D20Pa7cQ.mjs","\u0000noop-middleware":"virtual_astro_middleware.mjs","\u0000virtual:astro:server-island-manifest":"chunks/_virtual_astro_server-island-manifest_C1Q2srgE.mjs","\u0000virtual:astro:session-driver":"chunks/_virtual_astro_session-driver_C-PI1Pas.mjs","\u0000virtual:astro:actions/noop-entrypoint":"chunks/noop-entrypoint_Z3zFhrGC.mjs","@astrojs/vercel/entrypoint":"entry.mjs","\u0000virtual:astro:page:src/pages/news/[slug]@_@astro":"chunks/_slug__Byh77mRl.mjs","\u0000virtual:astro:page:src/pages/events/[slug]@_@astro":"chunks/_slug__C7IQfRqj.mjs","\u0000virtual:astro:page:src/pages/advertise/advertising-packages@_@astro":"chunks/advertising-packages_BNtx2S_K.mjs","\u0000virtual:astro:page:src/pages/admin/applications@_@astro":"chunks/applications_BsrQua9u.mjs","\u0000virtual:astro:page:src/pages/advertise/audiences-insights@_@astro":"chunks/audiences-insights_C7BGueON.mjs","\u0000virtual:astro:page:src/pages/admin/banners@_@astro":"chunks/banners_DV4Zbjgz.mjs","\u0000virtual:astro:page:src/pages/brands@_@astro":"chunks/brands_DfHNuRUe.mjs","\u0000virtual:astro:page:src/pages/about/company-overview@_@astro":"chunks/company-overview_DdcH1n3t.mjs","\u0000virtual:astro:page:src/pages/about/company-profile@_@astro":"chunks/company-profile_CY8mINKl.mjs","\u0000virtual:astro:page:src/pages/admin/contact@_@astro":"chunks/contact_CqAS58nt.mjs","\u0000virtual:astro:page:src/pages/contact@_@astro":"chunks/contact_wQukDMcj.mjs","\u0000virtual:astro:page:src/pages/admin/dashboard@_@astro":"chunks/dashboard_yQX8QCnX.mjs","\u0000virtual:astro:page:src/pages/news/events@_@astro":"chunks/events_BHVD0dIN.mjs","\u0000virtual:astro:page:src/pages/events@_@astro":"chunks/events_DK2qRrSa.mjs","\u0000virtual:astro:page:src/pages/admin/events@_@astro":"chunks/events_Dw0zdaQ4.mjs","\u0000virtual:astro:page:src/pages/news/gallery@_@astro":"chunks/gallery_B07HFZGi.mjs","\u0000virtual:astro:page:src/pages/admin/gallery@_@astro":"chunks/gallery_eprYb9Qo.mjs","\u0000virtual:astro:page:node_modules/astro/dist/assets/endpoint/generic@_@js":"chunks/generic_CKRp3qBt.mjs","\u0000virtual:astro:page:src/pages/about/history@_@astro":"chunks/history_BhKVzG0_.mjs","\u0000virtual:astro:page:src/pages/index@_@astro":"chunks/index_B6riLsmm.mjs","\u0000virtual:astro:page:src/pages/admin/index@_@astro":"chunks/index_CW-oaqac.mjs","\u0000virtual:astro:page:src/pages/advertise/latest-offers@_@astro":"chunks/latest-offers_B88DIr4r.mjs","\u0000virtual:astro:page:src/pages/live-chat@_@astro":"chunks/live-chat_DHAKLr3h.mjs","\u0000virtual:astro:page:src/pages/admin/news@_@astro":"chunks/news_lp5v8Ucj.mjs","\u0000virtual:astro:page:src/pages/news/newsletter@_@astro":"chunks/newsletter_BGJCBJ-x.mjs","C:/futuremediamainwebsite/futuremediamainwebsite/node_modules/astro/dist/assets/services/sharp.js":"chunks/sharp_DObHJDIj.mjs","\u0000virtual:astro:page:src/pages/shop-beat@_@astro":"chunks/shop-beat_DcwCu28s.mjs","\u0000virtual:astro:page:src/pages/advertise/solutions@_@astro":"chunks/solutions_BAVPjCNM.mjs","\u0000virtual:astro:page:src/pages/solutions@_@astro":"chunks/solutions_DS8vWHa0.mjs","\u0000virtual:astro:page:src/pages/special-offers@_@astro":"chunks/special-offers_CakgkjQP.mjs","\u0000virtual:astro:page:src/pages/admin/subscriptions@_@astro":"chunks/subscriptions_MHi0AURa.mjs","\u0000virtual:astro:page:src/pages/about/team@_@astro":"chunks/team_C1kU6C32.mjs","\u0000virtual:astro:page:src/pages/advertise/terms@_@astro":"chunks/terms_iHsn-b49.mjs","\u0000virtual:astro:page:src/pages/admin/users@_@astro":"chunks/users_CNgne0bD.mjs","\u0000virtual:astro:page:src/pages/vacancies@_@astro":"chunks/vacancies_CP8p5Q2q.mjs","\u0000virtual:astro:page:src/pages/admin/vacancies@_@astro":"chunks/vacancies_nwNGCAzK.mjs","\u0000virtual:astro:page:src/pages/about/values@_@astro":"chunks/values_D440JCrD.mjs","\u0000virtual:astro:page:src/pages/about/vision-mission@_@astro":"chunks/vision-mission_D2AN7ab_.mjs","C:/futuremediamainwebsite/futuremediamainwebsite/src/components/Footer.astro?astro&type=script&index=0&lang.ts":"_astro/Footer.astro_astro_type_script_index_0_lang.eUxAJUlA.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/components/Header.astro?astro&type=script&index=0&lang.ts":"_astro/Header.astro_astro_type_script_index_0_lang.Bz6Q5nth.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/components/HeroSlider.astro?astro&type=script&index=0&lang.ts":"_astro/HeroSlider.astro_astro_type_script_index_0_lang.DhNYx9VG.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/components/LogoScroller.astro?astro&type=script&index=0&lang.ts":"_astro/LogoScroller.astro_astro_type_script_index_0_lang.Dy_NpVOr.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/components/WhatsAppChat.astro?astro&type=script&index=0&lang.ts":"_astro/WhatsAppChat.astro_astro_type_script_index_0_lang.jH0HRHMf.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/advertising-packages.astro?astro&type=script&index=0&lang.ts":"_astro/advertising-packages.astro_astro_type_script_index_0_lang.D61leF83.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/company-profile.astro?astro&type=script&index=0&lang.ts":"_astro/company-profile.astro_astro_type_script_index_0_lang.Btk56B8h.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/contact.astro?astro&type=script&index=0&lang.ts":"_astro/contact.astro_astro_type_script_index_0_lang.CbnVFhuE.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/news/newsletter.astro?astro&type=script&index=0&lang.ts":"_astro/newsletter.astro_astro_type_script_index_0_lang.CyNnOyzU.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/solutions.astro?astro&type=script&index=0&lang.ts":"_astro/solutions.astro_astro_type_script_index_0_lang.BPFUZGWL.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/vacancies.astro?astro&type=script&index=0&lang.ts":"_astro/vacancies.astro_astro_type_script_index_0_lang.CRIyBiBx.js","astro:scripts/before-hydration.js":""},"inlinedScripts":[["C:/futuremediamainwebsite/futuremediamainwebsite/src/components/Footer.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`footer-newsletter`),t=document.getElementById(`footer-nl-ok`),n=document.getElementById(`footer-nl-err`);!e||e.dataset.ready===`1`||(e.dataset.ready=`1`,e.addEventListener(`submit`,async r=>{r.preventDefault(),n&&(n.style.display=`none`);let i=new FormData(e),a=window.__API_BASE__||`http://localhost:8080`;try{let n=await fetch(`${a}/api/subscriptions`,{method:`POST`,headers:{\"Content-Type\":`application/json`},body:JSON.stringify({fullName:i.get(`name`),email:i.get(`email`),language:i.get(`language`)})}),r=await n.json();if(!n.ok||!r.success)throw Error(r.message||`Subscribe failed`);e.style.display=`none`,t&&(t.style.display=`block`)}catch(e){n&&(n.textContent=e.message||`Could not subscribe`,n.style.display=`block`)}}))}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/components/Header.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`main-nav`),t=document.getElementById(`nav-toggle`),n=document.getElementById(`nav-panel`);if(!e||!t||!n||e.dataset.ready===`1`)return;e.dataset.ready=`1`;function r(){e.classList.remove(`is-open`),t.setAttribute(`aria-expanded`,`false`),t.setAttribute(`aria-label`,`Open menu`),document.body.classList.remove(`nav-open`),e.querySelectorAll(`.main-nav__item--dropdown.is-open`).forEach(e=>{e.classList.remove(`is-open`)})}function i(){e.classList.add(`is-open`),t.setAttribute(`aria-expanded`,`true`),t.setAttribute(`aria-label`,`Close menu`),document.body.classList.add(`nav-open`)}t.addEventListener(`click`,()=>{e.classList.contains(`is-open`)?r():i()}),e.querySelectorAll(`[data-submenu-toggle]`).forEach(t=>{t.addEventListener(`click`,n=>{n.preventDefault(),n.stopPropagation();let r=t.closest(`.main-nav__item--dropdown`);if(!r)return;let i=r.classList.contains(`is-open`);e.querySelectorAll(`.main-nav__item--dropdown.is-open`).forEach(e=>{e.classList.remove(`is-open`)}),i||r.classList.add(`is-open`)})}),n.querySelectorAll(`.main-nav__dropdown a, .main-nav__item:not(.main-nav__item--dropdown) > .main-nav__link`).forEach(e=>{e.addEventListener(`click`,()=>{window.matchMedia(`(max-width: 980px)`).matches&&r()})}),window.addEventListener(`resize`,()=>{window.innerWidth>980&&r()})}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/components/HeroSlider.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`hero-slider`),t=document.getElementById(`hero-track`);if(!e||!t||e.dataset.sliderReady===`1`)return;e.dataset.sliderReady=`1`;let n=e.querySelectorAll(`.hero__banner-slide`),r=e.querySelectorAll(`.hero__indicator`),i=0,a,o=n.length;if(o<=1)return;function s(e){let a=(e%o+o)%o;a!==i&&(i=a,t.style.transform=`translate3d(-${i*100}%, 0, 0)`,n.forEach((e,t)=>{let n=t===i;e.setAttribute(`aria-hidden`,n?`false`:`true`),e.classList.toggle(`is-active`,n)}),r.forEach((e,t)=>{e.classList.toggle(`active`,t===i)}))}function c(){l(),a=setInterval(()=>s(i+1),2800)}function l(){a&&clearInterval(a)}r.forEach((e,t)=>{e.addEventListener(`click`,()=>{s(t),c()})}),e.addEventListener(`mouseenter`,l),e.addEventListener(`mouseleave`,c),c()}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/components/LogoScroller.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`brand-contact-dialog`),t=document.getElementById(`brand-contact-open`),n=document.getElementById(`brand-contact-close`),r=document.getElementById(`brand-contact-cancel`),i=document.getElementById(`brand-contact-done`),a=document.getElementById(`brand-contact-form`),o=document.getElementById(`brand-contact-success`),s=document.getElementById(`brand-contact-success-brand`);if(!e||!t||!a||e.getAttribute(`data-ready`))return;e.setAttribute(`data-ready`,`1`);function c(){if(!e||!a||!o)return;a.hidden=!1,o.hidden=!0,a.reset();let t=a.querySelector(`input[name=\"brand\"]`);t&&(t.checked=!0),e.showModal()}function l(){e?.close()}t.addEventListener(`click`,c),n?.addEventListener(`click`,l),r?.addEventListener(`click`,l),i?.addEventListener(`click`,l),e.addEventListener(`click`,t=>{t.target===e&&l()}),a.addEventListener(`submit`,e=>{e.preventDefault();let t=new FormData(a),n=String(t.get(`brand`)||``);s&&(s.textContent=n),a.hidden=!0,o&&(o.hidden=!1)})}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/advertising-packages.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`pkg-filters`),t=document.getElementById(`pkg-grid`);!e||!t||e.querySelectorAll(`.pkg-filter`).forEach(n=>{n.addEventListener(`click`,()=>{e.querySelectorAll(`.pkg-filter`).forEach(e=>e.classList.remove(`is-active`)),n.classList.add(`is-active`);let r=n.getAttribute(`data-filter`);t.querySelectorAll(`.card`).forEach(e=>{let t=r===`All`||e.getAttribute(`data-type`)===r;e.style.display=t?``:`none`})})})}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/company-profile.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`download-form`),t=document.getElementById(`download-success`);e?.addEventListener(`submit`,n=>{n.preventDefault(),e.style.display=`none`,t&&(t.style.display=`block`)})}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/contact.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`media-audit-form`);if(!e||e.getAttribute(`data-ready`))return;e.setAttribute(`data-ready`,`1`);let t=1,n=document.getElementById(`audit-progress`),r=document.getElementById(`audit-back`),i=document.getElementById(`audit-next`),a=document.getElementById(`audit-nav`);e.querySelectorAll(`.option-tiles`).forEach(e=>{let t=e.getAttribute(`data-multi`)===`true`;e.querySelectorAll(`.option-tile`).forEach(n=>{n.addEventListener(`click`,()=>{t||e.querySelectorAll(`.option-tile`).forEach(e=>e.classList.remove(`is-selected`)),n.classList.toggle(`is-selected`)})})});function o(o){t=o,e.querySelectorAll(`.audit-step`).forEach(e=>{let t=e.getAttribute(`data-step`);e.hidden=t!==String(o)&&!(o===5&&t===`done`)}),o<=4?(n&&(n.textContent=`Step ${o} of 4`),a&&(a.style.display=`flex`),r&&(r.hidden=o===1),i&&(i.textContent=o===4?`Submit`:`Next`)):(n&&(n.textContent=`Complete`),a&&(a.style.display=`none`),e.querySelectorAll(`.audit-step`).forEach(e=>{e.hidden=e.getAttribute(`data-step`)!==`done`}))}r?.addEventListener(`click`,()=>{t>1&&o(t-1)}),i?.addEventListener(`click`,async()=>{if(t<4){o(t+1);return}let n=document.getElementById(`a-name`)?.value?.trim(),r=document.getElementById(`a-email`)?.value?.trim(),a=document.getElementById(`a-phone`)?.value?.trim(),s=document.getElementById(`a-company`)?.value?.trim(),c=document.getElementById(`a-notes`)?.value?.trim(),l=document.getElementById(`audit-location`)?.value||``,u=Array.from(e.querySelectorAll(`.audit-step[data-step=\"1\"] .option-tile.is-selected`)).map(e=>e.textContent?.trim()).filter(Boolean),d=e.querySelector(`.audit-step[data-step=\"2\"] .option-tile.is-selected`)?.textContent?.trim()||``,f=e.querySelector(`.audit-step[data-step=\"3\"] .option-tiles:not(:last-of-type) .option-tile.is-selected`)?.textContent?.trim()||Array.from(e.querySelectorAll(`.audit-step[data-step=\"3\"] .option-tile.is-selected`)).map(e=>e.textContent?.trim()).join(`, `);if(!n||!r){alert(`Please fill in your name and email.`);return}let p=[`Campaign types: ${u.join(`, `)||`N/A`}`,`Location: ${l||`N/A`}`,`Audience: ${d||`N/A`}`,`Timing / Budget: ${f||`N/A`}`,`Company: ${s||`N/A`}`,`Notes: ${c||`N/A`}`].join(`\n`),m=window.__API_BASE__||`http://localhost:8080`;try{i&&(i.disabled=!0,i.textContent=`Submitting…`);let e=await fetch(`${m}/api/contact`,{method:`POST`,headers:{\"Content-Type\":`application/json`},body:JSON.stringify({fullName:n,email:r,phone:a,subject:`Free Media Audit Enquiry`,message:p})}),t=await e.json();if(!e.ok||!t.success)throw Error(t.message||`Failed to submit`);o(5)}catch(e){alert(e.message||`Could not submit the form. Please try again.`),i&&(i.disabled=!1,i.textContent=`Submit`)}}),o(1)}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/news/newsletter.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`newsletter-form`),t=document.getElementById(`nl-success`),n=document.getElementById(`nl-error`);!e||e.dataset.ready===`1`||(e.dataset.ready=`1`,e.addEventListener(`submit`,async r=>{r.preventDefault(),n&&(n.style.display=`none`);let i=window.__API_BASE__||`http://localhost:8080`;try{let n=await fetch(`${i}/api/subscriptions`,{method:`POST`,headers:{\"Content-Type\":`application/json`},body:JSON.stringify({fullName:document.getElementById(`nl-name`).value,email:document.getElementById(`nl-email`).value,language:document.getElementById(`nl-language`).value})}),r=await n.json();if(!n.ok||!r.success)throw Error(r.message||`Subscribe failed`);e.style.display=`none`,t&&(t.style.display=`block`)}catch(e){n&&(n.textContent=e.message||`Could not subscribe`,n.style.display=`block`)}}))}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/solutions.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`solutions-accordion`);e&&e.querySelectorAll(`[data-accordion-trigger]`).forEach(t=>{t.addEventListener(`click`,()=>{let n=t.closest(`.accordion__item`),r=n?.classList.contains(`is-open`);e.querySelectorAll(`.accordion__item`).forEach(e=>e.classList.remove(`is-open`)),r||n?.classList.add(`is-open`)})})}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/vacancies.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`apply-modal`),t=document.getElementById(`apply-form`),n=document.getElementById(`apply-success`),r=document.getElementById(`apply-error`),i=window.__API_BASE__||`http://localhost:8080`;!e||e.getAttribute(`data-ready`)||(e.setAttribute(`data-ready`,`1`),document.querySelectorAll(`.apply-btn`).forEach(i=>{i.addEventListener(`click`,()=>{let a=i.dataset.id||``,o=i.dataset.title||`position`;document.getElementById(`apply-vacancy-id`).value=a;let s=document.getElementById(`apply-title`);s&&(s.textContent=`Apply — ${o}`),t&&(t.style.display=`block`),n&&(n.hidden=!0),r&&(r.style.display=`none`),e.hidden=!1})}),e.querySelectorAll(`[data-close]`).forEach(t=>{t.addEventListener(`click`,()=>{e.hidden=!0})}),t?.addEventListener(`submit`,async e=>{e.preventDefault(),r&&(r.style.display=`none`);let a=new FormData;a.append(`vacancyId`,document.getElementById(`apply-vacancy-id`).value),a.append(`fullName`,document.getElementById(`apply-name`).value),a.append(`email`,document.getElementById(`apply-email`).value),a.append(`phone`,document.getElementById(`apply-phone`).value),a.append(`location`,document.getElementById(`apply-location`).value);let o=document.getElementById(`apply-cv`).files?.[0];o&&a.append(`cv`,o);try{let e=await fetch(`${i}/api/applications/apply`,{method:`POST`,body:a}),r=await e.json();if(!e.ok||!r.success)throw Error(r.message||`Failed to submit`);t&&(t.style.display=`none`),n&&(n.hidden=!1)}catch(e){r&&(r.textContent=e.message||`Failed to submit application`,r.style.display=`block`)}}))}e(),document.addEventListener(`astro:page-load`,e);"]],"assets":["/favicon.ico","/favicon.svg","/assets/logo.png","/assets/save.png","/assets/slide1.png","/assets/slide2.png","/assets/slider3.png","/admin/fm-admin.js","/_astro/WhatsAppChat.astro_astro_type_script_index_0_lang.jH0HRHMf.js","/assets/companieslogos/logo-99fm.jpg","/assets/companieslogos/logo-fmnews.jpg","/assets/companieslogos/logo-freshfm.jpg","/assets/companieslogos/logo-learnon.jpg","/assets/companieslogos/logo-nova.jpg","/assets/companieslogos/logo-omulunga.jpg","/assets/companieslogos/logo-one.jpg","/assets/companieslogos/logo-wave.jpg","/assets/icons/address.png","/assets/icons/brand.png","/assets/icons/Events.png","/assets/icons/live-chat.png","/assets/icons/Shop Beat.png","/assets/icons/solutions.png","/assets/icons/Special Offer.png","/assets/icons/Studio.png","/assets/images/events/event-1.png","/assets/images/events/event-1.svg","/assets/images/events/event-2.png","/assets/images/events/event-2.svg","/assets/images/events/event-3.png","/assets/images/events/event-3.svg","/assets/images/brands/99fm.png","/assets/images/brands/entryfy.png","/assets/images/brands/omulunga.png","/assets/images/brands/oneafrica.png","/assets/images/brands/onone.png","/assets/images/brands/promobasket.png","/assets/images/brands/propertynews.png","/assets/images/brands/shopbeat.png","/assets/images/brands/specials.png","/assets/images/news/news-1.png","/assets/images/news/news-1.svg","/assets/images/news/news-2.png","/assets/images/news/news-2.svg","/assets/images/news/news-3.png","/assets/images/news/news-3.svg","/_astro/admin.DF6XE_WY.css","/_astro/BaseLayout._NcAa1Ym.css","/_astro/index.OYiibmjt.css"],"buildFormat":"directory","checkOrigin":true,"actionBodySizeLimit":1048576,"serverIslandBodySizeLimit":1048576,"allowedDomains":[],"key":"Q6+/XhPIs9gYckr45i7GW5tAYOpQDfnBUBxIYrd/+v0=","image":{},"devToolbar":{"enabled":false,"debugInfoOutput":""},"logLevel":"info","shouldInjectCspMetaTags":false});
+var _manifest = deserializeManifest({"rootDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/","cacheDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/node_modules/.astro/","outDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/dist/","srcDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/src/","publicDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/public/","buildClientDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/dist/client/","buildServerDir":"file:///C:/futuremediamainwebsite/futuremediamainwebsite/dist/server/","adapterName":"@astrojs/vercel","assetsDir":"_astro","routes":[{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"type":"page","component":"_server-islands.astro","params":["name"],"segments":[[{"content":"_server-islands","dynamic":false,"spread":false}],[{"content":"name","dynamic":true,"spread":false}]],"pattern":"^\\/_server-islands\\/([^/]+?)\\/?$","prerender":false,"isIndex":false,"fallbackRoutes":[],"route":"/_server-islands/[name]","origin":"internal","distURL":[],"_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/_image","component":"node_modules/astro/dist/assets/endpoint/generic.js","params":[],"pathname":"/_image","pattern":"^\\/_image\\/?$","segments":[[{"content":"_image","dynamic":false,"spread":false}]],"type":"endpoint","prerender":false,"fallbackRoutes":[],"distURL":[],"isIndex":false,"origin":"internal","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/about/company-overview","isIndex":false,"type":"page","pattern":"^\\/about\\/company-overview\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}],[{"content":"company-overview","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about/company-overview.astro","pathname":"/about/company-overview","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/about/company-profile","isIndex":false,"type":"page","pattern":"^\\/about\\/company-profile\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}],[{"content":"company-profile","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about/company-profile.astro","pathname":"/about/company-profile","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/about/history","isIndex":false,"type":"page","pattern":"^\\/about\\/history\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}],[{"content":"history","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about/history.astro","pathname":"/about/history","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/about/team","isIndex":false,"type":"page","pattern":"^\\/about\\/team\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}],[{"content":"team","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about/team.astro","pathname":"/about/team","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/about/values","isIndex":false,"type":"page","pattern":"^\\/about\\/values\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}],[{"content":"values","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about/values.astro","pathname":"/about/values","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/about/vision-mission","isIndex":false,"type":"page","pattern":"^\\/about\\/vision-mission\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}],[{"content":"vision-mission","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about/vision-mission.astro","pathname":"/about/vision-mission","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/admin/applications","isIndex":false,"type":"page","pattern":"^\\/admin\\/applications\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"applications","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/applications.astro","pathname":"/admin/applications","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/admin/banners","isIndex":false,"type":"page","pattern":"^\\/admin\\/banners\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"banners","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/banners.astro","pathname":"/admin/banners","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/admin/contact","isIndex":false,"type":"page","pattern":"^\\/admin\\/contact\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"contact","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/contact.astro","pathname":"/admin/contact","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/admin/dashboard","isIndex":false,"type":"page","pattern":"^\\/admin\\/dashboard\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"dashboard","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/dashboard.astro","pathname":"/admin/dashboard","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/admin/events","isIndex":false,"type":"page","pattern":"^\\/admin\\/events\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"events","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/events.astro","pathname":"/admin/events","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/admin/gallery","isIndex":false,"type":"page","pattern":"^\\/admin\\/gallery\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"gallery","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/gallery.astro","pathname":"/admin/gallery","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/admin/news","isIndex":false,"type":"page","pattern":"^\\/admin\\/news\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"news","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/news.astro","pathname":"/admin/news","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/admin/subscriptions","isIndex":false,"type":"page","pattern":"^\\/admin\\/subscriptions\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"subscriptions","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/subscriptions.astro","pathname":"/admin/subscriptions","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/admin/users","isIndex":false,"type":"page","pattern":"^\\/admin\\/users\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"users","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/users.astro","pathname":"/admin/users","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/admin/vacancies","isIndex":false,"type":"page","pattern":"^\\/admin\\/vacancies\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}],[{"content":"vacancies","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/vacancies.astro","pathname":"/admin/vacancies","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/admin","isIndex":true,"type":"page","pattern":"^\\/admin\\/?$","segments":[[{"content":"admin","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/admin/index.astro","pathname":"/admin","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"inline","content":".pkg-filters[data-astro-cid-foautpwm]{flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:32px;display:flex}.pkg-filter[data-astro-cid-foautpwm]{color:#313e4a;background:#fff;border:1px solid #e2e5e8;border-radius:20px;padding:8px 16px;font-size:13px;font-weight:600}.pkg-filter[data-astro-cid-foautpwm].is-active{color:#fff;background:#313e4a;border-color:#313e4a}\n"},{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/advertise/advertising-packages","isIndex":false,"type":"page","pattern":"^\\/advertise\\/advertising-packages\\/?$","segments":[[{"content":"advertise","dynamic":false,"spread":false}],[{"content":"advertising-packages","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/advertise/advertising-packages.astro","pathname":"/advertise/advertising-packages","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/advertise/audiences-insights","isIndex":false,"type":"page","pattern":"^\\/advertise\\/audiences-insights\\/?$","segments":[[{"content":"advertise","dynamic":false,"spread":false}],[{"content":"audiences-insights","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/advertise/audiences-insights.astro","pathname":"/advertise/audiences-insights","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/advertise/latest-offers","isIndex":false,"type":"page","pattern":"^\\/advertise\\/latest-offers\\/?$","segments":[[{"content":"advertise","dynamic":false,"spread":false}],[{"content":"latest-offers","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/advertise/latest-offers.astro","pathname":"/advertise/latest-offers","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"inline","content":".proof-stats[data-astro-cid-mtbpkoiy]{grid-template-columns:repeat(4,1fr);gap:16px;max-width:800px;margin:32px auto 0;display:grid}.proof-stats[data-astro-cid-mtbpkoiy] div[data-astro-cid-mtbpkoiy]{text-align:center}.proof-stats[data-astro-cid-mtbpkoiy] strong[data-astro-cid-mtbpkoiy]{color:#e3564e;font-size:28px;font-weight:700;display:block}.proof-stats[data-astro-cid-mtbpkoiy] span[data-astro-cid-mtbpkoiy]{color:#ffffffb3;font-size:12px}.accordion__item[data-astro-cid-mtbpkoiy]{background:#fff;border:1px solid #e2e5e8;border-radius:8px;margin-bottom:12px;overflow:hidden}.accordion__trigger[data-astro-cid-mtbpkoiy]{color:#313e4a;text-align:left;justify-content:space-between;align-items:center;width:100%;padding:18px 20px;font-size:16px;font-weight:700;display:flex}.accordion__arrow[data-astro-cid-mtbpkoiy]{color:#e3564e;transition:transform .25s}.accordion__item[data-astro-cid-mtbpkoiy].is-open .accordion__arrow[data-astro-cid-mtbpkoiy]{transform:rotate(180deg)}.accordion__panel[data-astro-cid-mtbpkoiy]{padding:0 20px 20px;display:none}.accordion__item[data-astro-cid-mtbpkoiy].is-open .accordion__panel[data-astro-cid-mtbpkoiy]{display:block}.accordion__cards[data-astro-cid-mtbpkoiy]{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;display:grid}.accordion__card[data-astro-cid-mtbpkoiy]{background:#f4f5f6;border-radius:6px;padding:16px}.accordion__card[data-astro-cid-mtbpkoiy] h3[data-astro-cid-mtbpkoiy]{color:#313e4a;margin-bottom:6px;font-size:15px}.accordion__card[data-astro-cid-mtbpkoiy] p[data-astro-cid-mtbpkoiy]{color:#5a6570;margin-bottom:10px;font-size:13px}.accordion__card[data-astro-cid-mtbpkoiy] a[data-astro-cid-mtbpkoiy]{color:#e3564e;font-size:13px;font-weight:600}@media (width<=700px){.proof-stats[data-astro-cid-mtbpkoiy]{grid-template-columns:1fr 1fr}}\n"},{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/advertise/solutions","isIndex":false,"type":"page","pattern":"^\\/advertise\\/solutions\\/?$","segments":[[{"content":"advertise","dynamic":false,"spread":false}],[{"content":"solutions","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/advertise/solutions.astro","pathname":"/advertise/solutions","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/advertise/terms","isIndex":false,"type":"page","pattern":"^\\/advertise\\/terms\\/?$","segments":[[{"content":"advertise","dynamic":false,"spread":false}],[{"content":"terms","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/advertise/terms.astro","pathname":"/advertise/terms","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/brands","isIndex":false,"type":"page","pattern":"^\\/brands\\/?$","segments":[[{"content":"brands","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/brands.astro","pathname":"/brands","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"inline","content":".audit-progress[data-astro-cid-6bfsojfh]{color:#e3564e;margin-bottom:16px;font-size:13px;font-weight:600}.option-tiles[data-astro-cid-6bfsojfh]{flex-wrap:wrap;gap:8px;display:flex}.option-tile[data-astro-cid-6bfsojfh]{color:#313e4a;cursor:pointer;background:#fff;border:1px solid #e2e5e8;border-radius:20px;padding:8px 14px;font-size:13px}.option-tile[data-astro-cid-6bfsojfh].is-selected{color:#e3564e;background:#e3564e14;border-color:#e3564e;font-weight:600}\n"},{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/contact","isIndex":false,"type":"page","pattern":"^\\/contact\\/?$","segments":[[{"content":"contact","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/contact.astro","pathname":"/contact","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/events/[slug]","isIndex":false,"type":"page","pattern":"^\\/events\\/([^/]+?)\\/?$","segments":[[{"content":"events","dynamic":false,"spread":false}],[{"content":"slug","dynamic":true,"spread":false}]],"params":["slug"],"component":"src/pages/events/[slug].astro","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/events","isIndex":false,"type":"page","pattern":"^\\/events\\/?$","segments":[[{"content":"events","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/events.astro","pathname":"/events","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/live-chat","isIndex":false,"type":"page","pattern":"^\\/live-chat\\/?$","segments":[[{"content":"live-chat","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/live-chat.astro","pathname":"/live-chat","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/news/events","isIndex":false,"type":"page","pattern":"^\\/news\\/events\\/?$","segments":[[{"content":"news","dynamic":false,"spread":false}],[{"content":"events","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/news/events.astro","pathname":"/news/events","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/news/gallery","isIndex":false,"type":"page","pattern":"^\\/news\\/gallery\\/?$","segments":[[{"content":"news","dynamic":false,"spread":false}],[{"content":"gallery","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/news/gallery.astro","pathname":"/news/gallery","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/news/newsletter","isIndex":false,"type":"page","pattern":"^\\/news\\/newsletter\\/?$","segments":[[{"content":"news","dynamic":false,"spread":false}],[{"content":"newsletter","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/news/newsletter.astro","pathname":"/news/newsletter","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/news/[slug]","isIndex":false,"type":"page","pattern":"^\\/news\\/([^/]+?)\\/?$","segments":[[{"content":"news","dynamic":false,"spread":false}],[{"content":"slug","dynamic":true,"spread":false}]],"params":["slug"],"component":"src/pages/news/[slug].astro","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/shop-beat","isIndex":false,"type":"page","pattern":"^\\/shop-beat\\/?$","segments":[[{"content":"shop-beat","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/shop-beat.astro","pathname":"/shop-beat","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/solutions","isIndex":false,"type":"page","pattern":"^\\/solutions\\/?$","segments":[[{"content":"solutions","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/solutions.astro","pathname":"/solutions","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/BaseLayout._NcAa1Ym.css"}],"routeData":{"route":"/special-offers","isIndex":false,"type":"page","pattern":"^\\/special-offers\\/?$","segments":[[{"content":"special-offers","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/special-offers.astro","pathname":"/special-offers","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/vacancies","isIndex":false,"type":"page","pattern":"^\\/vacancies\\/?$","segments":[[{"content":"vacancies","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/vacancies.astro","pathname":"/vacancies","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/","isIndex":true,"type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}}],"serverLike":true,"middlewareMode":"classic","base":"/","trailingSlash":"ignore","compressHTML":"jsx","componentMetadata":[["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/applications.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/banners.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/contact.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/dashboard.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/events.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/gallery.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/news.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/subscriptions.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/users.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/vacancies.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/events.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/index.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/news/events.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/news/gallery.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/vacancies.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/admin/index.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/company-overview.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/company-profile.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/history.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/team.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/values.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/vision-mission.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/advertising-packages.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/audiences-insights.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/latest-offers.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/solutions.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/terms.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/brands.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/contact.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/events/[slug].astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/live-chat.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/news/[slug].astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/news/newsletter.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/shop-beat.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/solutions.astro",{"propagation":"none","containsHead":true}],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/special-offers.astro",{"propagation":"none","containsHead":true}]],"renderers":[],"clientDirectives":[["idle","(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value==\"object\"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};\"requestIdleCallback\"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event(\"astro:idle\"));})();"],["load","(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event(\"astro:load\"));})();"],["media","(()=>{var n=(a,t)=>{let i=async()=>{await(await a())()};if(t.value){let e=matchMedia(t.value);e.matches?i():e.addEventListener(\"change\",i,{once:!0})}};(self.Astro||(self.Astro={})).media=n;window.dispatchEvent(new Event(\"astro:media\"));})();"],["only","(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event(\"astro:only\"));})();"],["visible","(()=>{var a=(s,i,o)=>{let r=async()=>{await(await s())()},t=typeof i.value==\"object\"?i.value:void 0,c={rootMargin:t==null?void 0:t.rootMargin},n=new IntersectionObserver(e=>{for(let l of e)if(l.isIntersecting){n.disconnect(),r();break}},c);for(let e of o.children)n.observe(e)};(self.Astro||(self.Astro={})).visible=a;window.dispatchEvent(new Event(\"astro:visible\"));})();"]],"entryModules":{"astro/entrypoints/prerender":"prerender-entry.7IFjlVjg.mjs","\u0000noop-middleware":"virtual_astro_middleware.mjs","\u0000virtual:astro:server-island-manifest":"chunks/_virtual_astro_server-island-manifest_C1Q2srgE.mjs","\u0000virtual:astro:session-driver":"chunks/_virtual_astro_session-driver_C-PI1Pas.mjs","\u0000virtual:astro:page:src/pages/admin/applications@_@astro":"chunks/applications_DsxP9DTp.mjs","\u0000virtual:astro:page:src/pages/admin/banners@_@astro":"chunks/banners_B0TPIws1.mjs","\u0000virtual:astro:page:src/pages/admin/contact@_@astro":"chunks/contact_CTbFCrro.mjs","\u0000virtual:astro:page:src/pages/admin/dashboard@_@astro":"chunks/dashboard_B-aPU1KR.mjs","\u0000virtual:astro:page:src/pages/events@_@astro":"chunks/events_BaHgedFF.mjs","\u0000virtual:astro:page:src/pages/news/events@_@astro":"chunks/events_DszgjuF1.mjs","\u0000virtual:astro:page:src/pages/admin/events@_@astro":"chunks/events_iR_iFJOs.mjs","\u0000virtual:astro:page:src/pages/news/gallery@_@astro":"chunks/gallery_BDzfQ6p4.mjs","\u0000virtual:astro:page:src/pages/admin/gallery@_@astro":"chunks/gallery_D6smg7oN.mjs","\u0000virtual:astro:page:src/pages/admin/index@_@astro":"chunks/index_CYNDz5_u.mjs","\u0000virtual:astro:page:src/pages/index@_@astro":"chunks/index_ptSo2tYy.mjs","\u0000virtual:astro:page:src/pages/admin/news@_@astro":"chunks/news_DPC-IGSf.mjs","\u0000virtual:astro:actions/noop-entrypoint":"chunks/noop-entrypoint_Z3zFhrGC.mjs","\u0000virtual:astro:page:src/pages/admin/subscriptions@_@astro":"chunks/subscriptions_BkZIKt47.mjs","\u0000virtual:astro:page:src/pages/admin/users@_@astro":"chunks/users_DtwjYu75.mjs","\u0000virtual:astro:page:src/pages/admin/vacancies@_@astro":"chunks/vacancies_B1F-9zTK.mjs","\u0000virtual:astro:page:src/pages/vacancies@_@astro":"chunks/vacancies_CIPyjaD-.mjs","@astrojs/vercel/entrypoint":"entry.mjs","\u0000virtual:astro:page:src/pages/news/[slug]@_@astro":"chunks/_slug__D-4xEDCv.mjs","\u0000virtual:astro:page:src/pages/events/[slug]@_@astro":"chunks/_slug__gdkCTKDb.mjs","\u0000virtual:astro:page:src/pages/advertise/advertising-packages@_@astro":"chunks/advertising-packages_BNtx2S_K.mjs","\u0000virtual:astro:page:src/pages/advertise/audiences-insights@_@astro":"chunks/audiences-insights_C7BGueON.mjs","\u0000virtual:astro:page:src/pages/brands@_@astro":"chunks/brands_DfHNuRUe.mjs","\u0000virtual:astro:page:src/pages/about/company-overview@_@astro":"chunks/company-overview_DdcH1n3t.mjs","\u0000virtual:astro:page:src/pages/about/company-profile@_@astro":"chunks/company-profile_CY8mINKl.mjs","\u0000virtual:astro:page:src/pages/contact@_@astro":"chunks/contact_wQukDMcj.mjs","\u0000virtual:astro:page:node_modules/astro/dist/assets/endpoint/generic@_@js":"chunks/generic_CKRp3qBt.mjs","\u0000virtual:astro:page:src/pages/about/history@_@astro":"chunks/history_BhKVzG0_.mjs","\u0000virtual:astro:page:src/pages/advertise/latest-offers@_@astro":"chunks/latest-offers_B88DIr4r.mjs","\u0000virtual:astro:page:src/pages/live-chat@_@astro":"chunks/live-chat_DHAKLr3h.mjs","\u0000virtual:astro:page:src/pages/news/newsletter@_@astro":"chunks/newsletter_BGJCBJ-x.mjs","C:/futuremediamainwebsite/futuremediamainwebsite/node_modules/astro/dist/assets/services/sharp.js":"chunks/sharp_DObHJDIj.mjs","\u0000virtual:astro:page:src/pages/shop-beat@_@astro":"chunks/shop-beat_DcwCu28s.mjs","\u0000virtual:astro:page:src/pages/advertise/solutions@_@astro":"chunks/solutions_BAVPjCNM.mjs","\u0000virtual:astro:page:src/pages/solutions@_@astro":"chunks/solutions_DS8vWHa0.mjs","\u0000virtual:astro:page:src/pages/special-offers@_@astro":"chunks/special-offers_CakgkjQP.mjs","\u0000virtual:astro:page:src/pages/about/team@_@astro":"chunks/team_C1kU6C32.mjs","\u0000virtual:astro:page:src/pages/advertise/terms@_@astro":"chunks/terms_iHsn-b49.mjs","\u0000virtual:astro:page:src/pages/about/values@_@astro":"chunks/values_D440JCrD.mjs","\u0000virtual:astro:page:src/pages/about/vision-mission@_@astro":"chunks/vision-mission_D2AN7ab_.mjs","C:/futuremediamainwebsite/futuremediamainwebsite/src/components/Footer.astro?astro&type=script&index=0&lang.ts":"_astro/Footer.astro_astro_type_script_index_0_lang.eUxAJUlA.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/components/Header.astro?astro&type=script&index=0&lang.ts":"_astro/Header.astro_astro_type_script_index_0_lang.Bz6Q5nth.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/components/HeroSlider.astro?astro&type=script&index=0&lang.ts":"_astro/HeroSlider.astro_astro_type_script_index_0_lang.DhNYx9VG.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/components/LogoScroller.astro?astro&type=script&index=0&lang.ts":"_astro/LogoScroller.astro_astro_type_script_index_0_lang.Dy_NpVOr.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/components/WhatsAppChat.astro?astro&type=script&index=0&lang.ts":"_astro/WhatsAppChat.astro_astro_type_script_index_0_lang.jH0HRHMf.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/advertising-packages.astro?astro&type=script&index=0&lang.ts":"_astro/advertising-packages.astro_astro_type_script_index_0_lang.D61leF83.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/company-profile.astro?astro&type=script&index=0&lang.ts":"_astro/company-profile.astro_astro_type_script_index_0_lang.Btk56B8h.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/contact.astro?astro&type=script&index=0&lang.ts":"_astro/contact.astro_astro_type_script_index_0_lang.CbnVFhuE.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/news/newsletter.astro?astro&type=script&index=0&lang.ts":"_astro/newsletter.astro_astro_type_script_index_0_lang.CyNnOyzU.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/solutions.astro?astro&type=script&index=0&lang.ts":"_astro/solutions.astro_astro_type_script_index_0_lang.BPFUZGWL.js","C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/vacancies.astro?astro&type=script&index=0&lang.ts":"_astro/vacancies.astro_astro_type_script_index_0_lang.CRIyBiBx.js","astro:scripts/before-hydration.js":""},"inlinedScripts":[["C:/futuremediamainwebsite/futuremediamainwebsite/src/components/Footer.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`footer-newsletter`),t=document.getElementById(`footer-nl-ok`),n=document.getElementById(`footer-nl-err`);!e||e.dataset.ready===`1`||(e.dataset.ready=`1`,e.addEventListener(`submit`,async r=>{r.preventDefault(),n&&(n.style.display=`none`);let i=new FormData(e),a=window.__API_BASE__||`http://localhost:8080`;try{let n=await fetch(`${a}/api/subscriptions`,{method:`POST`,headers:{\"Content-Type\":`application/json`},body:JSON.stringify({fullName:i.get(`name`),email:i.get(`email`),language:i.get(`language`)})}),r=await n.json();if(!n.ok||!r.success)throw Error(r.message||`Subscribe failed`);e.style.display=`none`,t&&(t.style.display=`block`)}catch(e){n&&(n.textContent=e.message||`Could not subscribe`,n.style.display=`block`)}}))}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/components/Header.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`main-nav`),t=document.getElementById(`nav-toggle`),n=document.getElementById(`nav-panel`);if(!e||!t||!n||e.dataset.ready===`1`)return;e.dataset.ready=`1`;function r(){e.classList.remove(`is-open`),t.setAttribute(`aria-expanded`,`false`),t.setAttribute(`aria-label`,`Open menu`),document.body.classList.remove(`nav-open`),e.querySelectorAll(`.main-nav__item--dropdown.is-open`).forEach(e=>{e.classList.remove(`is-open`)})}function i(){e.classList.add(`is-open`),t.setAttribute(`aria-expanded`,`true`),t.setAttribute(`aria-label`,`Close menu`),document.body.classList.add(`nav-open`)}t.addEventListener(`click`,()=>{e.classList.contains(`is-open`)?r():i()}),e.querySelectorAll(`[data-submenu-toggle]`).forEach(t=>{t.addEventListener(`click`,n=>{n.preventDefault(),n.stopPropagation();let r=t.closest(`.main-nav__item--dropdown`);if(!r)return;let i=r.classList.contains(`is-open`);e.querySelectorAll(`.main-nav__item--dropdown.is-open`).forEach(e=>{e.classList.remove(`is-open`)}),i||r.classList.add(`is-open`)})}),n.querySelectorAll(`.main-nav__dropdown a, .main-nav__item:not(.main-nav__item--dropdown) > .main-nav__link`).forEach(e=>{e.addEventListener(`click`,()=>{window.matchMedia(`(max-width: 980px)`).matches&&r()})}),window.addEventListener(`resize`,()=>{window.innerWidth>980&&r()})}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/components/HeroSlider.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`hero-slider`),t=document.getElementById(`hero-track`);if(!e||!t||e.dataset.sliderReady===`1`)return;e.dataset.sliderReady=`1`;let n=e.querySelectorAll(`.hero__banner-slide`),r=e.querySelectorAll(`.hero__indicator`),i=0,a,o=n.length;if(o<=1)return;function s(e){let a=(e%o+o)%o;a!==i&&(i=a,t.style.transform=`translate3d(-${i*100}%, 0, 0)`,n.forEach((e,t)=>{let n=t===i;e.setAttribute(`aria-hidden`,n?`false`:`true`),e.classList.toggle(`is-active`,n)}),r.forEach((e,t)=>{e.classList.toggle(`active`,t===i)}))}function c(){l(),a=setInterval(()=>s(i+1),2800)}function l(){a&&clearInterval(a)}r.forEach((e,t)=>{e.addEventListener(`click`,()=>{s(t),c()})}),e.addEventListener(`mouseenter`,l),e.addEventListener(`mouseleave`,c),c()}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/components/LogoScroller.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`brand-contact-dialog`),t=document.getElementById(`brand-contact-open`),n=document.getElementById(`brand-contact-close`),r=document.getElementById(`brand-contact-cancel`),i=document.getElementById(`brand-contact-done`),a=document.getElementById(`brand-contact-form`),o=document.getElementById(`brand-contact-success`),s=document.getElementById(`brand-contact-success-brand`);if(!e||!t||!a||e.getAttribute(`data-ready`))return;e.setAttribute(`data-ready`,`1`);function c(){if(!e||!a||!o)return;a.hidden=!1,o.hidden=!0,a.reset();let t=a.querySelector(`input[name=\"brand\"]`);t&&(t.checked=!0),e.showModal()}function l(){e?.close()}t.addEventListener(`click`,c),n?.addEventListener(`click`,l),r?.addEventListener(`click`,l),i?.addEventListener(`click`,l),e.addEventListener(`click`,t=>{t.target===e&&l()}),a.addEventListener(`submit`,e=>{e.preventDefault();let t=new FormData(a),n=String(t.get(`brand`)||``);s&&(s.textContent=n),a.hidden=!0,o&&(o.hidden=!1)})}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/advertising-packages.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`pkg-filters`),t=document.getElementById(`pkg-grid`);!e||!t||e.querySelectorAll(`.pkg-filter`).forEach(n=>{n.addEventListener(`click`,()=>{e.querySelectorAll(`.pkg-filter`).forEach(e=>e.classList.remove(`is-active`)),n.classList.add(`is-active`);let r=n.getAttribute(`data-filter`);t.querySelectorAll(`.card`).forEach(e=>{let t=r===`All`||e.getAttribute(`data-type`)===r;e.style.display=t?``:`none`})})})}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/about/company-profile.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`download-form`),t=document.getElementById(`download-success`);e?.addEventListener(`submit`,n=>{n.preventDefault(),e.style.display=`none`,t&&(t.style.display=`block`)})}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/contact.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`media-audit-form`);if(!e||e.getAttribute(`data-ready`))return;e.setAttribute(`data-ready`,`1`);let t=1,n=document.getElementById(`audit-progress`),r=document.getElementById(`audit-back`),i=document.getElementById(`audit-next`),a=document.getElementById(`audit-nav`);e.querySelectorAll(`.option-tiles`).forEach(e=>{let t=e.getAttribute(`data-multi`)===`true`;e.querySelectorAll(`.option-tile`).forEach(n=>{n.addEventListener(`click`,()=>{t||e.querySelectorAll(`.option-tile`).forEach(e=>e.classList.remove(`is-selected`)),n.classList.toggle(`is-selected`)})})});function o(o){t=o,e.querySelectorAll(`.audit-step`).forEach(e=>{let t=e.getAttribute(`data-step`);e.hidden=t!==String(o)&&!(o===5&&t===`done`)}),o<=4?(n&&(n.textContent=`Step ${o} of 4`),a&&(a.style.display=`flex`),r&&(r.hidden=o===1),i&&(i.textContent=o===4?`Submit`:`Next`)):(n&&(n.textContent=`Complete`),a&&(a.style.display=`none`),e.querySelectorAll(`.audit-step`).forEach(e=>{e.hidden=e.getAttribute(`data-step`)!==`done`}))}r?.addEventListener(`click`,()=>{t>1&&o(t-1)}),i?.addEventListener(`click`,async()=>{if(t<4){o(t+1);return}let n=document.getElementById(`a-name`)?.value?.trim(),r=document.getElementById(`a-email`)?.value?.trim(),a=document.getElementById(`a-phone`)?.value?.trim(),s=document.getElementById(`a-company`)?.value?.trim(),c=document.getElementById(`a-notes`)?.value?.trim(),l=document.getElementById(`audit-location`)?.value||``,u=Array.from(e.querySelectorAll(`.audit-step[data-step=\"1\"] .option-tile.is-selected`)).map(e=>e.textContent?.trim()).filter(Boolean),d=e.querySelector(`.audit-step[data-step=\"2\"] .option-tile.is-selected`)?.textContent?.trim()||``,f=e.querySelector(`.audit-step[data-step=\"3\"] .option-tiles:not(:last-of-type) .option-tile.is-selected`)?.textContent?.trim()||Array.from(e.querySelectorAll(`.audit-step[data-step=\"3\"] .option-tile.is-selected`)).map(e=>e.textContent?.trim()).join(`, `);if(!n||!r){alert(`Please fill in your name and email.`);return}let p=[`Campaign types: ${u.join(`, `)||`N/A`}`,`Location: ${l||`N/A`}`,`Audience: ${d||`N/A`}`,`Timing / Budget: ${f||`N/A`}`,`Company: ${s||`N/A`}`,`Notes: ${c||`N/A`}`].join(`\n`),m=window.__API_BASE__||`http://localhost:8080`;try{i&&(i.disabled=!0,i.textContent=`Submitting…`);let e=await fetch(`${m}/api/contact`,{method:`POST`,headers:{\"Content-Type\":`application/json`},body:JSON.stringify({fullName:n,email:r,phone:a,subject:`Free Media Audit Enquiry`,message:p})}),t=await e.json();if(!e.ok||!t.success)throw Error(t.message||`Failed to submit`);o(5)}catch(e){alert(e.message||`Could not submit the form. Please try again.`),i&&(i.disabled=!1,i.textContent=`Submit`)}}),o(1)}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/news/newsletter.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`newsletter-form`),t=document.getElementById(`nl-success`),n=document.getElementById(`nl-error`);!e||e.dataset.ready===`1`||(e.dataset.ready=`1`,e.addEventListener(`submit`,async r=>{r.preventDefault(),n&&(n.style.display=`none`);let i=window.__API_BASE__||`http://localhost:8080`;try{let n=await fetch(`${i}/api/subscriptions`,{method:`POST`,headers:{\"Content-Type\":`application/json`},body:JSON.stringify({fullName:document.getElementById(`nl-name`).value,email:document.getElementById(`nl-email`).value,language:document.getElementById(`nl-language`).value})}),r=await n.json();if(!n.ok||!r.success)throw Error(r.message||`Subscribe failed`);e.style.display=`none`,t&&(t.style.display=`block`)}catch(e){n&&(n.textContent=e.message||`Could not subscribe`,n.style.display=`block`)}}))}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/advertise/solutions.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`solutions-accordion`);e&&e.querySelectorAll(`[data-accordion-trigger]`).forEach(t=>{t.addEventListener(`click`,()=>{let n=t.closest(`.accordion__item`),r=n?.classList.contains(`is-open`);e.querySelectorAll(`.accordion__item`).forEach(e=>e.classList.remove(`is-open`)),r||n?.classList.add(`is-open`)})})}e(),document.addEventListener(`astro:page-load`,e);"],["C:/futuremediamainwebsite/futuremediamainwebsite/src/pages/vacancies.astro?astro&type=script&index=0&lang.ts","function e(){let e=document.getElementById(`apply-modal`),t=document.getElementById(`apply-form`),n=document.getElementById(`apply-success`),r=document.getElementById(`apply-error`),i=window.__API_BASE__||`http://localhost:8080`;!e||e.getAttribute(`data-ready`)||(e.setAttribute(`data-ready`,`1`),document.querySelectorAll(`.apply-btn`).forEach(i=>{i.addEventListener(`click`,()=>{let a=i.dataset.id||``,o=i.dataset.title||`position`;document.getElementById(`apply-vacancy-id`).value=a;let s=document.getElementById(`apply-title`);s&&(s.textContent=`Apply — ${o}`),t&&(t.style.display=`block`),n&&(n.hidden=!0),r&&(r.style.display=`none`),e.hidden=!1})}),e.querySelectorAll(`[data-close]`).forEach(t=>{t.addEventListener(`click`,()=>{e.hidden=!0})}),t?.addEventListener(`submit`,async e=>{e.preventDefault(),r&&(r.style.display=`none`);let a=new FormData;a.append(`vacancyId`,document.getElementById(`apply-vacancy-id`).value),a.append(`fullName`,document.getElementById(`apply-name`).value),a.append(`email`,document.getElementById(`apply-email`).value),a.append(`phone`,document.getElementById(`apply-phone`).value),a.append(`location`,document.getElementById(`apply-location`).value);let o=document.getElementById(`apply-cv`).files?.[0];o&&a.append(`cv`,o);try{let e=await fetch(`${i}/api/applications/apply`,{method:`POST`,body:a}),r=await e.json();if(!e.ok||!r.success)throw Error(r.message||`Failed to submit`);t&&(t.style.display=`none`),n&&(n.hidden=!1)}catch(e){r&&(r.textContent=e.message||`Failed to submit application`,r.style.display=`block`)}}))}e(),document.addEventListener(`astro:page-load`,e);"]],"assets":["/favicon.ico","/favicon.svg","/admin/fm-admin.js","/assets/logo.png","/assets/save.png","/assets/slide1.png","/assets/slide2.png","/assets/slider3.png","/_astro/WhatsAppChat.astro_astro_type_script_index_0_lang.jH0HRHMf.js","/assets/companieslogos/logo-99fm.jpg","/assets/companieslogos/logo-fmnews.jpg","/assets/companieslogos/logo-freshfm.jpg","/assets/companieslogos/logo-learnon.jpg","/assets/companieslogos/logo-nova.jpg","/assets/companieslogos/logo-omulunga.jpg","/assets/companieslogos/logo-one.jpg","/assets/companieslogos/logo-wave.jpg","/assets/icons/address.png","/assets/icons/brand.png","/assets/icons/Events.png","/assets/icons/live-chat.png","/assets/icons/Shop Beat.png","/assets/icons/solutions.png","/assets/icons/Special Offer.png","/assets/icons/Studio.png","/assets/images/brands/99fm.png","/assets/images/brands/entryfy.png","/assets/images/brands/omulunga.png","/assets/images/brands/oneafrica.png","/assets/images/brands/onone.png","/assets/images/brands/promobasket.png","/assets/images/brands/propertynews.png","/assets/images/brands/shopbeat.png","/assets/images/brands/specials.png","/assets/images/news/news-1.png","/assets/images/news/news-1.svg","/assets/images/news/news-2.png","/assets/images/news/news-2.svg","/assets/images/news/news-3.png","/assets/images/news/news-3.svg","/assets/images/events/event-1.png","/assets/images/events/event-1.svg","/assets/images/events/event-2.png","/assets/images/events/event-2.svg","/assets/images/events/event-3.png","/assets/images/events/event-3.svg","/_astro/admin.DF6XE_WY.css","/_astro/api._NcAa1Ym.css","/_astro/index.OYiibmjt.css","/_astro/BaseLayout._NcAa1Ym.css","/admin/applications/index.html","/admin/banners/index.html","/admin/contact/index.html","/admin/dashboard/index.html","/admin/events/index.html","/admin/gallery/index.html","/admin/news/index.html","/admin/subscriptions/index.html","/admin/users/index.html","/admin/vacancies/index.html","/admin/index.html","/events/index.html","/news/events/index.html","/news/gallery/index.html","/vacancies/index.html","/index.html"],"buildFormat":"directory","checkOrigin":true,"actionBodySizeLimit":1048576,"serverIslandBodySizeLimit":1048576,"allowedDomains":[],"key":"nmWet7TYf5VIXx5kIGO/s+XjBEZ6TO0cVnIJXkku9Ms=","image":{},"devToolbar":{"enabled":false,"debugInfoOutput":""},"logLevel":"info","shouldInjectCspMetaTags":false});
 var manifestRoutes = _manifest.routes;
 var manifest = Object.assign(_manifest, {
 	renderers,
@@ -6296,7 +5820,7 @@ var entrypoint_default = { async fetch(request) {
 	const hasValidMiddlewareSecret = request.headers.get(ASTRO_MIDDLEWARE_SECRET_HEADER) === middlewareSecret;
 	let realPath = void 0;
 	if (hasValidMiddlewareSecret) realPath = request.headers.get(ASTRO_PATH_HEADER);
-	else if (url.searchParams.get("x_astro_path_token") === "b299aac0-1928-4c29-bef5-3e9c47640493") realPath = url.searchParams.get(ASTRO_PATH_PARAM);
+	else if (url.searchParams.get("x_astro_path_token") === "b1f89abf-3aec-4a89-9a37-d5d66573016d") realPath = url.searchParams.get(ASTRO_PATH_PARAM);
 	if (typeof realPath === "string") {
 		url.pathname = realPath;
 		url.searchParams.delete(ASTRO_PATH_PARAM);

@@ -2,26 +2,28 @@
 import { getApprovedNews, mediaUrl, formatDate, excerpt } from '../lib/api';
 import { newsArticles as fallback } from '../data/news';
 
-export const prerender = false;
+let newsArticles = fallback.map((a) => ({
+  title: a.title,
+  excerpt: a.excerpt,
+  date: a.date,
+  image: a.image,
+  href: `/news/${a.slug}`,
+}));
 
-const apiNews = await getApprovedNews();
-const newsArticles = apiNews.length
-  ? apiNews.slice(0, 3).map((n: any) => ({
-      id: n.id,
+try {
+  const apiNews = await getApprovedNews();
+  if (apiNews.length) {
+    newsArticles = apiNews.slice(0, 3).map((n: any) => ({
       title: n.title,
       excerpt: excerpt(n.description),
       date: formatDate(n.createdDate),
       image: mediaUrl(n.mediaPath),
       href: `/news/${n.id}`,
-    }))
-  : fallback.map((a) => ({
-      id: a.slug,
-      title: a.title,
-      excerpt: a.excerpt,
-      date: a.date,
-      image: a.image,
-      href: `/news/${a.slug}`,
     }));
+  }
+} catch (e) {
+  console.error('NewsSection API fallback:', e);
+}
 ---
 
 <section class="section">
