@@ -1,7 +1,7 @@
 /** Browser-side API helper (uses PUBLIC_API_URL injected at build, or localhost). */
 export const API_BASE =
   (typeof window !== 'undefined' && (window as any).__API_BASE__) ||
-  'http://localhost:8080';
+  'https://futurem.simplyfound.com.na';
 
 export async function apiFetch(path: string, options: RequestInit = {}) {
   const headers = new Headers(options.headers || {});

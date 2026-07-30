@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.PUBLIC_API_URL || 'http://localhost:8080';
+const API_BASE = import.meta.env.PUBLIC_API_URL || 'https://futurem.simplyfound.com.na';
 
 export { API_BASE };
 
