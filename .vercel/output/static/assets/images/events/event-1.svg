@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#313E4A"/>
+  <rect x="0" y="350" width="800" height="150" fill="#E3564E" opacity="0.15"/>
+  <text x="60" y="160" font-family="Arial, sans-serif" font-size="14" fill="#E3564E" letter-spacing="4">AUGUST 2026</text>
+  <text x="60" y="220" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white">Media Expo</text>
+  <text x="60" y="270" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="white">Windhoek</text>
+  <circle cx="680" cy="250" r="100" fill="none" stroke="#E3564E" stroke-width="2" opacity="0.4"/>
+  <circle cx="680" cy="250" r="70" fill="none" stroke="#E3564E" stroke-width="1" opacity="0.3"/>
+</svg>

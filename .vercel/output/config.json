@@ -1,0 +1,176 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^/_astro/(.*)$",
+			"headers": {
+				"cache-control": "public, max-age=31536000, immutable"
+			},
+			"continue": true
+		},
+		{
+			"src": "^/_server-islands/([^/]+?)/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/_image/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/about/company-overview/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/about/company-profile/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/about/history/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/about/team/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/about/values/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/about/vision-mission/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/applications/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/banners/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/contact/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/dashboard/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/events/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/gallery/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/news/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/subscriptions/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/users/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/vacancies/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/admin/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/advertise/advertising-packages/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/advertise/audiences-insights/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/advertise/latest-offers/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/advertise/solutions/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/advertise/terms/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/brands/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/contact/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/events/([^/]+?)/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/events/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/live-chat/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/news/events/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/news/gallery/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/news/newsletter/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/news/([^/]+?)/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/shop-beat/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/solutions/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/special-offers/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/vacancies/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/404/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/.*$",
+			"dest": "_render",
+			"status": 404
+		}
+	]
+}

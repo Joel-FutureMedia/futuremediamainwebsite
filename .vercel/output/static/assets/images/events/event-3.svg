@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="ev3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4B5866"/>
+      <stop offset="100%" style="stop-color:#313E4A"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#ev3)"/>
+  <rect x="0" y="400" width="800" height="100" fill="#E3564E" opacity="0.18"/>
+  <rect x="60" y="70" width="180" height="280" rx="4" fill="#E3564E"/>
+  <rect x="78" y="95" width="144" height="90" fill="rgba(255,255,255,0.15)"/>
+  <text x="90" y="140" font-family="Arial, sans-serif" font-size="13" fill="white" font-weight="bold">YOUR BRAND</text>
+  <text x="90" y="162" font-family="Arial, sans-serif" font-size="13" fill="white" font-weight="bold">HERE</text>
+  <circle cx="680" cy="140" r="90" fill="#E3564E" opacity="0.85"/>
+  <circle cx="680" cy="140" r="55" fill="none" stroke="white" stroke-width="2" opacity="0.35"/>
+  <text x="60" y="400" font-family="Arial, sans-serif" font-size="14" fill="#E3564E" letter-spacing="3" font-weight="bold">OCTOBER 2026</text>
+  <text x="280" y="200" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="white">Outdoor</text>
+  <text x="280" y="250" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="white">Masterclass</text>
+  <rect x="280" y="270" width="90" height="3" fill="#E3564E"/>
+  <text x="280" y="310" font-family="Arial, sans-serif" font-size="16" fill="rgba(255,255,255,0.75)">Billboards - Transit - Street furniture</text>
+</svg>
